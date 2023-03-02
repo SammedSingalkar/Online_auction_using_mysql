@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Notifications</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    .side {
+        width: 200px;
+        background-color: #000036;
+        ;
+        height: 100%;
+        position: fixed;
+        padding: 2vh;
+        color: white;
+        box-shadow: 0 30px 40px 0px rgba(62, 62, 201, .8);
+    }
+
+    #bo {
+        height: 10vh;
+        border-bottom: .6px solid #3e3ec9;
+    }
+
+    #active {
+        /* background-color: #4934d3; */
+        background-image: linear-gradient(60deg, rgb(66, 53, 149), rgb(47, 17, 239));
+        margin-top: 2vh;
+        margin-left: -6px;
+        /* margin-right: 10px; */
+        width: 180px;
+        /* text-align: center; */
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    #non-active {
+        margin-top: 2vh;
+        margin-left: -6px;
+        /* margin-right: 10px; */
+        width: 180px;
+        /* text-align: center; */
+
+    }
+
+    #non-active:hover {
+        background-color: #4934d3;
+        border-radius: 5px;
+        cursor: pointer;
+        /* transition: background-color .4s; */
+    }
+
+
+    .side .under a {
+        color: white;
+        /* padding: 16px; */
+        text-decoration: none;
+        font-size: 4vh;
+        font-weight: 500;
+    }
+
+    .under {
+        display: inline-block;
+    }
+
+    .container1 {
+        margin-top: 12vh;
+        padding-bottom: 5vh;
+        min-height: 300px;
+        max-height: 800px;
+        width: 800px;
+        /* background-color: aqua;s */
+        /* background-color: #242471; */
+        /* background-image: linear-gradient(60deg, rgb(47, 186, 196), aqua); */
+        /* background-image: linear-gradient(60deg, rgb(252, 248, 14), rgb(27, 214, 34)); */
+        /* background-image: linear-gradient(60deg, rgb(25, 24, 84), rgb(36, 36, 113)); */
+        border-radius: 6px;
+        padding-left: 5vh;
+        padding-top: 7vh;
+        /* display: grid; */
+        /* grid-template-columns: 300px 1fr; */
+        display: inline-block;
+        margin-left: 10vh;
+        background-color:rgb(0, 0, 54,.8);
+    }
+
+    .boxs {
+        position: absolute;
+        margin-top: 6vh;
+        height: 6vh;
+        margin-left: 20vh;
+        /* background-color: rgb(224, 20, 204); */
+        /* background-image: linear-gradient(60deg, rgb(45, 50, 146), rgb(57, 13, 252)); */
+        border-radius: 6px;
+        width: 650px;
+        padding: 2vh;
+        /* display: inline-flex; */
+        background-color:rgba(209, 108, 7, 0.9);
+        display: inline-block;
+    }
+
+    div.main {
+        max-height: 2000px;
+        min-height: 745px;
+        padding-left: 250px;
+        /* padding: 1px 16px; */
+        /* background-color: #101046; */
+        /* background-color: #242471; */
+        background-image: url(../images/img1.jpg);
+    }
+</style>
+
+<body>
+    <div class="side">
+        <div id="bo">
+            <div class="under" style="display:inline-block;">
+                <img src="../images/logo8.png" alt="" height="60px" width="68px">
+            </div>
+            <div class="under">
+                <a href="/">Easy bid</a>
+            </div>
+        </div>
+        <a href="/"><i class="fa fa-home" id="non-active"
+            style='font-size:24px; color:white; padding: 2vh; font-size:2.5vh; font-weight: 500;'>&nbsp;&nbsp;Home</i></a> 
+        <h2 style="padding:2vh; margin-top:1vh; color:rgb(241, 42, 11);">User Account</h2>
+       <a href="profile.html"><i class="fa fa-user" id="non-active"
+            style='font-size:24px; color:white; padding: 2vh; font-size:2.5vh; font-weight: 500;'>&nbsp;&nbsp;Profile</i></a> 
+       <a href="auctions.html"><i class="fa fa-heart-o" id="non-active"
+            style="font-size:24px; color:white;  padding: 2vh; font-size:2.5vh; font-weight: 500;">&nbsp;&nbsp;Wishlist</i></a> 
+        <a href="purchases.html"><i class="fa fa-money" id="non-active"
+            style="font-size:24px; color:white;  padding: 2vh; font-size:2.5vh; font-weight: 500;">&nbsp;&nbsp;Purchases</i></a>
+        <i class="fa fa-gavel" id="non-active"
+            style="font-size:24px; color:white;  padding: 2vh; font-size:2.5vh; font-weight: 500;">&nbsp;&nbsp;Bids</i>
+        <a href="notifications.html"><i class="fa fa-bell" id="active"
+            style="font-size:24px; color:white;  padding: 2vh; font-size:2.5vh; font-weight: 500;">&nbsp;&nbsp;Notifications</i></a>
+
+        <h2 style="padding:2vh; margin-top:2vh; color:rgb(241, 42, 11)">Seller Section</h2>
+        <i class="fa fa-archive" id="non-active"
+            style="font-size:24px; color:white;  padding: 2vh; font-size:2.5vh; font-weight: 500;">&nbsp;&nbsp; List Your Product</i>
+        <i class="fa fa-handshake-o" id="non-active"
+            style="font-size:24px; color:white;  padding: 2vh; font-size:2.5vh; font-weight: 500;">&nbsp;&nbsp;Selling
+            History</i>
+    </div>
+
+    <div class="main">
+        <h3 style="padding-top:2vh; margin-left:4vh; color:white">Notifications</h3>
+        <div class="boxs">
+            <h2 style="color:#0d0b0b; font-size:4vh; text-align: center;">Notifications</h2>
+        </div>
+        <div class="container1">
+            <div class="notify">
+                <a href="/" class="closebtn">&times;</a>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos quod nostrum repellendus, eum dolorem omnis
+                at amet, alias esse hic facere aliquam odit officiis rerum repellat maxime repudiandae, voluptatibus
+                voluptates dolorum deserunt consectetur minus sint aspernatur eius! Earum nesciunt perspiciatis ea omnis
+                repudiandae.
+            </div>
+            <div class="notify" style="background-color:rgb(36, 46, 46) ;">
+                <a href="/" class="closebtn">&times;</a>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos quod nostrum repellendus, eum dolorem omnis
+                at amet, alias esse hic facere aliquam odit officiis rerum repellat maxime repudiandae, voluptatibus
+                voluptates dolorum deserunt consectetur minus sint aspernatur eius! Earum nesciunt perspiciatis ea omnis
+                repudiandae.
+            </div>
+            <div class="notify" style="background-color:rgb(142, 13, 248) ;">
+                <a href="/" class="closebtn">&times;</a>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos quod nostrum repellendus, eum dolorem omnis
+                at amet, alias esse hic facere aliquam odit officiis rerum repellat maxime repudiandae, voluptatibus
+                voluptates dolorum deserunt consectetur minus sint aspernatur eius! Earum nesciunt perspiciatis ea omnis
+                repudiandae.
+            </div>
+            <div class="notify" style="background-color:rgb(248, 104, 9) ;">
+                <a href="/" class="closebtn">&times;</a>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos quod nostrum repellendus, eum dolorem omnis
+                at amet, alias esse hic facere aliquam odit officiis rerum repellat maxime repudiandae, voluptatibus
+                voluptates dolorum deserunt consectetur minus sint aspernatur eius! Earum nesciunt perspiciatis ea omnis
+                repudiandae.
+            </div>
+            <div class="notify" style="background-color:rgb(248, 4, 223) ;">
+                <a href="/" class="closebtn">&times;</a>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos quod nostrum repellendus, eum dolorem omnis
+                at amet, alias esse hic facere aliquam odit officiis rerum repellat maxime repudiandae, voluptatibus
+                voluptates dolorum deserunt consectetur minus sint aspernatur eius! Earum nesciunt perspiciatis ea omnis
+                repudiandae.
+            </div>
+        </div>
+
+        <style>
+            .notify {
+                margin-left: 3vh;
+                margin-right: 3vh;
+                margin-top: 2vh;
+                width: 95vh;
+                min-height: 8vh;
+                max-height: 14vh;
+                background-color: #eb0e0e;
+                border-radius: 5px;
+                /* padding: 2vh; */
+                position: relative;
+                overflow-x: hidden;
+                padding: 8px 8px 8px 32px;
+                color:white;
+                /* box-shadow: 10px 20px 20px 20px rgba(209, 240, 7, 0.8); */
+            }
+            .notify .closebtn{
+                display: none;
+            }
+
+            .notify:hover .closebtn {
+                /* position: absolute; */
+                top: 0;
+                float:right;
+                /* right: 28px; */
+                font-size: 40px;
+                /* margin-left: 50px; */
+                color: black;
+                margin-top: -2.8vh;
+                margin-right: -1vh;
+                display: block;
+            }
+        </style>
+</body>
+
+</html>

@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>List Product</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+    
+    <style>
+      /* Basic styles */
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+      }
+      h1 {
+        text-align: center;
+      }
+      form {
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #fff;
+        box-shadow: 0 0 10px rgba(0,0,0,0.3);
+        border-radius: 5px;
+      }
+      label {
+        display: block;
+        margin-bottom: 10px;
+        font-weight: bold;
+      }
+      input[type="text"], textarea {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        margin-bottom: 20px;
+        box-sizing: border-box;
+        /* background-color: transparent; */
+      }
+      input[type="submit"] {
+        background-color: #4CAF50;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      /* Specific styles for the product listing form */
+      .auction-form label[for="product-name"] {
+        margin-top: 20px;
+      }
+      .auction-form label[for="product-description"] {
+        margin-top: 20px;
+      }
+      .auction-form label[for="product-image"] {
+        margin-top: 20px;
+      }
+      .auction-form label[for="starting-price"] {
+        margin-top: 20px;
+      }
+      .auction-form label[for="auction-duration"] {
+        margin-top: 20px;
+      }
+      .auction-form label[for="shipping-cost"] {
+        margin-top: 20px;
+      }
+
+
+      * {
+       margin: 0;
+       padding: 0;
+   }
+
+   .side {
+       width: 220px;
+       background-color: #000036;
+       ;
+       height: 100%;
+       position: fixed;
+       padding: 2vh;
+       color: white;
+       box-shadow: 0 30px 40px 0px rgba(62, 62, 201, .8);
+   }
+
+   #bo {
+       height: 10vh;
+       border-bottom: .6px solid #3e3ec9;
+   }
+
+   #active {
+       /* background-color: #4934d3; */
+       background-image: linear-gradient(60deg, rgb(66, 53, 149), rgb(47, 17, 239));
+       margin-top: 2vh;
+       margin-left: -6px;
+       /* margin-right: 10px; */
+       width: 200px;
+       /* text-align: center; */
+       border-radius: 5px;
+       cursor: pointer;
+   }
+
+   #non-active {
+       margin-top: 2vh;
+       margin-left: -6px;
+       /* margin-right: 10px; */
+       width: 200px;
+       /* text-align: center; */
+
+   }
+
+   #non-active:hover {
+       background-color: #4934d3;
+       border-radius: 5px;
+       cursor: pointer;
+       /* transition: background-color .4s; */
+   }
+
+
+   .side .under a {
+       color: white;
+       /* padding: 16px; */
+       text-decoration: none;
+       font-size: 4vh;
+       font-weight: 500;
+   }
+
+   .under {
+       display: inline-block;
+   }
+    </style>
+  </head>
+  <body style="background-image: url(../images/img5.jpg);">
+    <div class="side">
+      <div id="bo">
+          <div class="under" style="display:inline-block;">
+              <img src="../images/logo8.png" alt="" height="60px" width="68px">
+          </div>
+          <div class="under">
+              <a href="/">Easy bid</a>
+          </div>
+      </div>
+      <a href="/"><i class="fa fa-home" id="non-active"
+        style='font-size:24px; color:white; padding: 2vh; font-size:2.5vh; font-weight: 500;'>&nbsp;&nbsp;Home</i></a> 
+    <h2 style="padding:2vh; margin-top:1vh; color:rgb(241, 42, 11);">User Account</h2>
+   <a href="profile.html"><i class="fa fa-user" id="non-active"
+        style='font-size:24px; color:white; padding: 2vh; font-size:2.5vh; font-weight: 500;'>&nbsp;&nbsp;Profile</i></a> 
+   <a href="wishlist.html"><i class="fa fa-heart-o" id="non-active"
+        style="font-size:24px; color:white;  padding: 2vh; font-size:2.5vh; font-weight: 500;">&nbsp;&nbsp;Wishlist</i></a> 
+    <a href="purchases.html"><i class="fa fa-money" id="non-active"
+        style="font-size:24px; color:white;  padding: 2vh; font-size:2.5vh; font-weight: 500;">&nbsp;&nbsp;Purchases</i></a>
+    <i class="fa fa-gavel" id="non-active"
+        style="font-size:24px; color:white;  padding: 2vh; font-size:2.5vh; font-weight: 500;">&nbsp;&nbsp;Bids</i>
+    <a href="notifications.html"><i class="fa fa-bell" id="non-active"
+        style="font-size:24px; color:white;  padding: 2vh; font-size:2.5vh; font-weight: 500;">&nbsp;&nbsp;Notifications</i></a>
+
+    <h2 style="padding:2vh; margin-top:2vh; color:rgb(241, 42, 11)">Seller Section</h2>
+    <i class="fa fa-archive" id="active"
+          style="font-size:24px; color:white;  padding: 2vh; font-size:2.5vh; font-weight: 500;">&nbsp;&nbsp; List Your Product</i>
+    <i class="fa fa-handshake-o" id="non-active"
+        style="font-size:24px; color:white;  padding: 2vh; font-size:2.5vh; font-weight: 500;">&nbsp;&nbsp;Selling
+        History</i>
+  </div>
+
+  <section style="padding-left:38vh; padding-top: 4vh;"> 
+    <h1>List a Product for Auction</h1>
+    <form class="auction-form">
+      <label for="product-name">Product Name:</label>
+      <input type="text" id="product-name" name="product-name" placeholder="Enter product name">
+      
+      <label for="product-description">Product Description:</label>
+      <textarea id="product-description" name="product-description" placeholder="Enter product description"></textarea>
+      
+      <label for="product-image">Product Image:</label>
+      <input type="file" id="product-image" name="product-image">
+      
+      <label for="starting-price">Starting Price:</label>
+      <input type="text" id="starting-price" name="starting-price" placeholder="Enter starting price">
+      
+      <label for="auction-duration">Auction Duration (in days):</label>
+      <input type="text" id="auction-duration" name="auction-duration" placeholder="Enter auction duration">
+      
+      <label for="shipping-cost">Shipping Cost:</label>
+      <input type="text" id="shipping-cost" name="shipping-cost" placeholder="Enter shipping cost">
+      
+      <center><input type="submit" value="List Product"></center>
+    </form>
+  </section>
+  </body>
+</html>

@@ -4,22 +4,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
-    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"> -->
+    <link rel="stylesheet" href="../custom.css">
     <title>Document</title>
     <style>
-        * {
-       margin: 0;
-       padding: 0;
-   }
 
    .side {
        width: 220px;
        background-color: #000036;
-       ;
        height: 100%;
        position: fixed;
        padding: 2vh;
@@ -91,33 +83,26 @@
 <body>
     <div class="side">
         <div id="bo">
-            <div class="under" style="display:inline-block;">
+            <div class="under">
                 <img src="../images/logo8.png" alt="" height="60px" width="68px">
             </div>
             <div class="under">
                 <a href="/">Easy bid</a>
             </div>
         </div>
-        <a href="/"><i class="fa fa-home" id="non-active"
-          style='font-size:24px; color:white; padding: 2vh; font-size:2.5vh; font-weight: 500;'>&nbsp;&nbsp;Home</i></a> 
-      <h2 style="padding:2vh; margin-top:1vh; color:rgb(241, 42, 11);">User Account</h2>
-     <a href="profile.html"><i class="fa fa-user" id="non-active"
-          style='font-size:24px; color:white; padding: 2vh; font-size:2.5vh; font-weight: 500;'>&nbsp;&nbsp;Profile</i></a> 
-     <a href="wishlist.html"><i class="fa fa-heart-o" id="non-active"
-          style="font-size:24px; color:white;  padding: 2vh; font-size:2.5vh; font-weight: 500;">&nbsp;&nbsp;Wishlist</i></a> 
-      <a href="purchases.html"><i class="fa fa-money" id="active"
-          style="font-size:24px; color:white;  padding: 2vh; font-size:2.5vh; font-weight: 500;">&nbsp;&nbsp;Purchases</i></a>
-      <i class="fa fa-gavel" id="non-active"
-          style="font-size:24px; color:white;  padding: 2vh; font-size:2.5vh; font-weight: 500;">&nbsp;&nbsp;Bids</i>
-      <a href="notifications.html"><i class="fa fa-bell" id="non-active"
-          style="font-size:24px; color:white;  padding: 2vh; font-size:2.5vh; font-weight: 500;">&nbsp;&nbsp;Notifications</i></a>
+       <a href="/"><i class="fa fa-home ele" id="non-active">&nbsp;&nbsp;Home</i></a>
 
-      <h2 style="padding:2vh; margin-top:2vh; color:rgb(241, 42, 11)">Seller Section</h2>
-      <i class="fa fa-archive" id="non-active"
-            style="font-size:24px; color:white;  padding: 2vh; font-size:2.5vh; font-weight: 500;">&nbsp;&nbsp; List Your Product</i>
-      <a href="selling_history.html"><i class="fa fa-handshake-o" id="non-active"
-          style="font-size:24px; color:white;  padding: 2vh; font-size:2.5vh; font-weight: 500;">&nbsp;&nbsp;Selling
-          History</i></a>
+        <h2 style="padding:2vh; margin-top:1vh; color:rgb(241, 42, 11);">User Account</h2>
+        <a href="profile.html"><i class="fa fa-user ele" id="non-active">&nbsp;&nbsp;Profile</i></a>
+        <a href="wishlist.html"><i class="fa fa-heart-o ele" id="non-active">&nbsp;&nbsp;Wishlist</i></a>
+        <a href="purchases.html"><i class="fa fa-money ele" id="active">&nbsp;&nbsp;Purchases</i></a>
+        <a href="bid.html"><i class="fa fa-gavel ele" id="non-active">&nbsp;&nbsp;Bids</i></a>
+        <a href="notifications.html"><i class="fa fa-bell ele" id="non-active">&nbsp;&nbsp;Notifications</i></a>
+
+        <h2 style="padding:2vh; margin-top:2vh; color:rgb(241, 42, 11)">Seller Section</h2>
+        <a href="list_product.html"><i class="fa fa-archive ele" id="non-active">&nbsp;&nbsp; List Your Product</i></a>
+        <a href="selling_history.html"><i class="fa fa-handshake-o ele" id="non-active">&nbsp;&nbsp;Selling
+                History</i></a>
     </div>
     
     <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
@@ -292,8 +277,7 @@
                   </div>
                 </div>
               </div>
-
-              
+   
           </div>
         </div>
       </section>

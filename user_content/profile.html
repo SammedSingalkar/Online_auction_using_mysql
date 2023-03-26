@@ -5,81 +5,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    
-   
-
+    <link rel="stylesheet" href="../custom.css">
     <title>profile</title>
 </head>
 
 <style>
-    * {
-        margin: 0;
-        padding: 0;
-    }
-
-    .side {
-        width: 200px;
-        background-color: #000036;;
-        height: 100%;
-        position: fixed;
-        padding: 2vh;
-        color: white;
-        box-shadow: 0 30px 40px 0px rgba(62, 62, 201, .8);
-    }
-
-    #bo {
-        height: 10vh;
-        border-bottom: .6px solid #3e3ec9;
-    }
-
-    #active {
-        /* background-color: #4934d3; */
-        background-image: linear-gradient(60deg, rgb(66, 53, 149), rgb(47, 17, 239));
-        margin-top: 2vh;
-        margin-left: -6px;
-        /* margin-right: 10px; */
-        width: 180px;
-        /* text-align: center; */
-        border-radius: 5px;
-        cursor: pointer;
-    }
-
-    #non-active {
-        margin-top: 2vh;
-        margin-left: -6px;
-        /* margin-right: 10px; */
-        width: 180px;
-        /* text-align: center; */
-
-    }
-
-    #non-active:hover {
-        background-color: #4934d3;
-        border-radius: 5px;
-        cursor: pointer;
-        /* transition: background-color .4s; */
-    }
-
-
-    .side .under a {
-        color: white;
-        /* padding: 16px; */
-        text-decoration: none;
-        font-size: 4vh;
-        font-weight: 500;
-    }
-
     div.main {
         max-height: 2000px;
-        min-height:100vh;
+        min-height: 100vh;
         padding-left: 250px;
-        /* padding: 1px 16px; */
-        /* background-color: #101046; */
-        /* background-color: #242471; */
-        background-image:url("../images/img.jpg");
+        background-image: url("../images/img.jpg");
     }
 
     .under {
@@ -91,23 +27,12 @@
         height: 550px;
         width: 700px;
         background-color: aqua;
-        /* background-image: linear-gradient(60deg, rgb(47, 186, 196), aqua); */
-        /* background-image: linear-gradient(60deg, rgb(49, 38, 47), rgb(16, 5, 8)); */
-        /* background-image: linear-gradient(60deg, rgb(25, 24, 84), rgb(36, 36, 113)); */
-        /* background-color: #000036; */
-        /* background-color:#4934d3; */
-        background-color:rgb(0, 0, 54,.8);
+        background-color: rgb(0, 0, 54, .8);
         border-radius: 6px;
-        /* position: absolute; */
-        /* position: relative; */
-        /* top: 0; */
         padding-left: 5vh;
         padding-top: 7vh;
-        /* display: grid; */
-    /* grid-template-columns: 300px 1fr; */
-    display: inline-block;
-    /* position: relative; */
-    color: white;
+        display: inline-block;
+        color: white;
     }
 
     .boxs {
@@ -115,118 +40,21 @@
         margin-top: 6vh;
         height: 8vh;
         margin-left: 5vh;
-        /* background-color: rgb(224, 20, 204); */
-        /* background-image: linear-gradient(60deg, rgb(195, 99, 171), rgb(238, 8, 192)); */
-        /* background-image: linear-gradient(60deg, rgb(170, 102, 53), rgb(251, 162, 8)); */
-        background-color:rgba(209, 108, 7, 0.9);
-        /* background-color:slateblue; */
+        background-color: rgba(209, 108, 7, 0.9);
         border-radius: 6px;
         width: 632px;
         padding: 2vh;
-        /* display: inline-flex; */
         display: inline-block;
     }
-</style>
 
-<body>
-    <div class="side">
-        <div id="bo">
-            <div class="under" style="display:inline-block;">
-                <img src="../images/logo8.png" alt="" height="60px" width="68px">
-            </div>
-            <div class="under">
-                <a href="/">Easy bid</a>
-            </div>
-        </div>
-        <a href="/"><i class="fa fa-home" id="non-active"
-            style='font-size:24px; color:white; padding: 2vh; font-size:2.5vh; font-weight: 500;'>&nbsp;&nbsp;Home</i></a> 
-        <h2 style="padding:2vh; margin-top:1vh; color:rgb(241, 42, 11);">User Account</h2>
-       <a href="user_content/profile.html"><i class="fa fa-user" id="active"
-            style='font-size:24px; color:white; padding: 2vh; font-size:2.5vh; font-weight: 500;'>&nbsp;&nbsp;Profile</i></a> 
-       <a href="wishlist.html"><i class="fa fa-heart-o" id="non-active"
-            style="font-size:24px; color:white;  padding: 2vh; font-size:2.5vh; font-weight: 500;">&nbsp;&nbsp;Wishlist</i></a> 
-        <a href="purchases.html"><i class="fa fa-money" id="non-active"
-            style="font-size:24px; color:white;  padding: 2vh; font-size:2.5vh; font-weight: 500;">&nbsp;&nbsp;Purchases</i></a>
-        <i class="fa fa-gavel" id="non-active"
-            style="font-size:24px; color:white;  padding: 2vh; font-size:2.5vh; font-weight: 500;">&nbsp;&nbsp;Bids</i>
-        <a href="notifications.html"><i class="fa fa-bell" id="non-active"
-            style="font-size:24px; color:white;  padding: 2vh; font-size:2.5vh; font-weight: 500;">&nbsp;&nbsp;Notifications</i></a>
-
-        <h2 style="padding:2vh; margin-top:2vh; color:rgb(241, 42, 11)">Seller Section</h2>
-        <a href="list_product.html"><i class="fa fa-archive" id="non-active"
-            style="font-size:24px; color:white;  padding: 2vh; font-size:2.5vh; font-weight: 500;">&nbsp;&nbsp; List Your Product</i></a>
-        <a href="selling_history.html"><i class="fa fa-handshake-o" id="non-active"
-            style="font-size:24px; color:white;  padding: 2vh; font-size:2.5vh; font-weight: 500;">&nbsp;&nbsp;Selling
-            History</i></a>
-        
-            
-           
-    </div>
-    
-
-    <div class="main">
-        <h3 style="padding-top:2vh; margin-left:4vh; color:white">User Profile</h3>
-        <div class="boxs">
-            <h2 style="color:white;">Edit Profile</h2>
-            <h4 style="margin-top:1vh;color:white;">Complete Your Profile</h4>
-        </div>
-        <div class="container1">
-            <div class="form">
-                <label for="firstname">Name:</label>
-                <input type="text" Name="firstname" class="form1" id="firstname" placeholder="Enter Your firstname"
-                    value="Sammed" readonly style="color:white; border:1.5px solid white; font-size:2.5vh;">
-            </div>
-            <div class="form">
-                <label for="lastname">Last Name:</label>
-                <input type="text" Name="lastname" class="form1" id="lastname" placeholder="Enter Your lastname"
-                    value="Singalkar" readonly style="color:white; border:1.5px solid white; font-size:2.5vh;">
-            </div>
-            <div class="form">
-                <label for="number">Mobile No:</label>
-                <input type="tels" Name="number" class="form1" size="10" id="mobile" placeholder="Enter Your mobile no"
-                    value="7896541230" readonly style="color:white; border:1.5px solid white; font-size:2.5vh;">
-            </div>
-            <div class="form">
-                <label for="email">Email:</label>
-                <input type="email" Name="email" class="form1" id="email" placeholder="Enter Your email id"
-                    value="abc@gmail.com" readonly style="color:white; border:1.5px solid white; font-size:2.5vh;">
-            </div>
-            <div class="form">
-                <label for="password">Password:</label>
-                <input type="password" Name="password" class="form1" id="password" placeholder="Enter Your password"
-                    value="lfdnjkfhhojj84r80u" readonly style="color:white; border:1.5px solid white; font-size:2.5vh;">
-            </div>
-            <div class="form">
-                <label for="gender">Gender:</label>
-                <input type="radio" Name="gender" id="gender" value="male"checked style="margin-left: 2vh; margin-top:4vh; color:black;"><Strong style="font-size:2.5vh;">  Male</Strong>
-                <input type="radio" Name="gender" id="gender" value="female" style="margin-left:4vh; margin-top:4vh; color:black;"><Strong style="font-size:2.5vh;">  Female</Strong>
-            </div>
-               <button type="submit" id="form_button">Edit Profile</button>
-        </div>
-
-          
-          
-        <div class="container1" style="width:60vh;  position:absolute; margin-left: 3vh; height: 140px; margin-top: 20vh; " >
-            <div class="boxs" style="background-image:none; width: 5vh;  visibility: hidden; margin-top: -24vh; margin-left: -7vh;">
-                <img src="../images/my_img.jpeg" alt="Not found" height="160px" width="190px" style="border-radius:50%; margin-left:22vh; position:s relative; visibility:visible;" >
-        
-          </div>
-            <h3 style="text-align:center;">Sammed Singalkar</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis sequi quas suscipit quaerat voluptas molestiae omnis voluptatibus tenetur? Explicabo nulla animi eligendi! Eos placeat, est odit necessitatibus nisi, earum vitae culpa consectetur quibusdam repellat aspernatur beatae in eveniet illo asperiores nulla iusto sed.</p>
-        </div>
-    </div>
-
-    
-
-    <style>
-        label {
+    label {
             font-size: 2.5vh;
             color: black;
         }
 
         .form {
             display: table-row;
-            
+
         }
 
         label,
@@ -241,18 +69,20 @@
             height: 6vh;
             border-radius: 4px;
             background-color: inherit;
-            font-size: 2vh;
             color: black;
             margin-top: 4vh;
             margin-left: 2vh;
             padding-left: 2vh;
+            color:white;
+            border:1.5px solid white; 
+            font-size:2.5vh;
         }
 
-        #form_button{
+        #form_button {
             width: 15vh;
-            height:6vh;
+            height: 6vh;
             border-radius: 5px;
-            background-color:#4934d3;
+            background-color: #4934d3;
             margin-left: 30vh;
             margin-top: 4vh;
             cursor: pointer;
@@ -263,10 +93,98 @@
 
         }
 
-        #form_button:active{
-            background-color:#270ade;
+        #form_button:active {
+            background-color: #270ade;
         }
-    </style>
+</style>
+
+<body>
+    <div class="side">
+        <div id="bo">
+            <div class="under">
+                <img src="../images/logo8.png" alt="" height="60px" width="68px">
+            </div>
+            <div class="under">
+                <a href="/">Easy bid</a>
+            </div>
+        </div>
+        <a href="/"><i class="fa fa-home ele" id="non-active">&nbsp;&nbsp;Home</i></a>
+
+        <h2 style="padding:2vh; margin-top:1vh; color:rgb(241, 42, 11);">User Account</h2>
+        <a href="profile.html"><i class="fa fa-user ele" id="active">&nbsp;&nbsp;Profile</i></a>
+        <a href="wishlist.html"><i class="fa fa-heart-o ele" id="non-active">&nbsp;&nbsp;Wishlist</i></a>
+        <a href="purchases.html"><i class="fa fa-money ele" id="non-active">&nbsp;&nbsp;Purchases</i></a>
+        <a href="bid.html"><i class="fa fa-gavel ele" id="non-active">&nbsp;&nbsp;Bids</i></a>
+        <a href="notifications.html"><i class="fa fa-bell ele" id="non-active">&nbsp;&nbsp;Notifications</i></a>
+
+        <h2 style="padding:2vh; margin-top:2vh; color:rgb(241, 42, 11)">Seller Section</h2>
+        <a href="list_product.html"><i class="fa fa-archive ele" id="non-active">&nbsp;&nbsp; List Your Product</i></a>
+        <a href="selling_history.html"><i class="fa fa-handshake-o ele" id="non-active">&nbsp;&nbsp;Selling
+                History</i></a>
+    </div>
+
+
+    <div class="main">
+        <h3 style="padding-top:2vh; margin-left:4vh; color:white">User Profile</h3>
+        <div class="boxs">
+            <h2 style="color:white;">Edit Profile</h2>
+            <h4 style="margin-top:1vh;color:white;">Complete Your Profile</h4>
+        </div>
+        <div class="container1">
+            <div class="form">
+                <label for="firstname">Name:</label>
+                <input type="text" Name="firstname" class="form1" id="firstname" placeholder="Enter Your firstname"
+                    value="Sammed" readonly>
+            </div>
+            <div class="form">
+                <label for="lastname">Last Name:</label>
+                <input type="text" Name="lastname" class="form1" id="lastname" placeholder="Enter Your lastname"
+                    value="Singalkar" readonly>
+            </div>
+            <div class="form">
+                <label for="number">Mobile No:</label>
+                <input type="tels" Name="number" class="form1" size="10" id="mobile" placeholder="Enter Your mobile no"
+                    value="7896541230" readonly>
+            </div>
+            <div class="form">
+                <label for="email">Email:</label>
+                <input type="email" Name="email" class="form1" id="email" placeholder="Enter Your email id"
+                    value="abc@gmail.com" readonly>
+            </div>
+            <div class="form">
+                <label for="password">Password:</label>
+                <input type="password" Name="password" class="form1" id="password" placeholder="Enter Your password"
+                    value="lfdnjkfhhojj84r80u" readonly>
+            </div>
+            <div class="form">
+                <label for="gender">Gender:</label>
+                <input type="radio" Name="gender" id="gender" value="male" checked
+                    style="margin-left: 2vh; margin-top:4vh; color:black;"><Strong style="font-size:2.5vh;">
+                    Male</Strong>
+                <input type="radio" Name="gender" id="gender" value="female"
+                    style="margin-left:4vh; margin-top:4vh; color:black;"><Strong style="font-size:2.5vh;">
+                    Female</Strong>
+            </div>
+            <button type="submit" id="form_button">Edit Profile</button>
+        </div>
+
+
+
+        <div class="container1"
+            style="width:60vh;  position:absolute; margin-left: 3vh; height: 140px; margin-top: 20vh; ">
+            <div class="boxs"
+                style="background-image:none; width: 5vh;  visibility: hidden; margin-top: -24vh; margin-left: -7vh;">
+                <img src="../images/my_img.jpeg" alt="Not found" height="160px" width="190px"
+                    style="border-radius:50%; margin-left:22vh; position:s relative; visibility:visible;">
+
+            </div>
+            <h3 style="text-align:center;">Sammed Singalkar</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis sequi quas suscipit quaerat voluptas
+                molestiae omnis voluptatibus tenetur? Explicabo nulla animi eligendi! Eos placeat, est odit
+                necessitatibus nisi, earum vitae culpa consectetur quibusdam repellat aspernatur beatae in eveniet illo
+                asperiores nulla iusto sed.</p>
+        </div>
+    </div>
 </body>
 
 </html>

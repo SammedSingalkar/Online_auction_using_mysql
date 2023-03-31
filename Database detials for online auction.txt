@@ -1,0 +1,41 @@
+1) User
+   i)     Name
+   ii)    Email
+   iii)   Addhar card
+   iv)    Mobile Number
+   v)     DOB
+   vi)    user Id (unique)
+   vii)   password
+   viii)  shipping address
+
+2) Item table
+    i)    item_id (unique)
+    ii)   item_name
+    iii)  description
+    iv)   starting_bid_price
+    v)    status (active, expired, sold)
+    vi)   current_bid_price
+    vii)  seller_id (foreign key to Users table)
+    viii) auction_start_time
+    ix)   auction_end_time
+    x)    Category
+
+3) Watchlist
+    i)   watchlist id 
+    ii)  item id (foreign key from item table)
+    iii) user id (foreign key from user table)
+
+4) Notification table
+    i)   Notificatio id (unique) 
+    ii)  user_id (foreign key from user table)
+    iii) message
+    iv)  notification_time
+
+5) Sold items/ sell history
+    i)   item_id (foreign key from item table)
+    ii)  item_name (foreign key from item table)
+    iii) seller id
+    iv)  buyer id
+
+
+

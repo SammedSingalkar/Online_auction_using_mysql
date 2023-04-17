@@ -1,0 +1,183 @@
+<html>
+
+<head>
+   <meta charset="utf-8">
+   <title>Form</title>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+   <style>
+      * {
+         padding: 0;
+         margin: 0;
+      }
+   
+      body {
+         background-color: 101046;
+         background-size: cover;
+      }
+   
+      .container {
+         background: #000036;
+         width: auto;
+         height: auto;
+         padding-bottom: 20px;
+         position: absolute;
+         top: 50%;
+         left: 50%;
+         transform: translate(-50%, -50%);
+         margin: auto;
+         padding: 70px 50px 20px 50px;
+         padding-top: 2%;
+      }
+      .h1{
+         color: whitesmoke;
+         text-align: center;
+      }
+      .h3{
+         padding-top: 3px;
+         color: whitesmoke;
+         text-align: center;
+      }  
+      .acc{
+         text-align: center;
+         color: whitesmoke;
+      }
+      .abc{
+         color: rgb(0, 255, 251);
+      }
+      .abc:hover{
+         color: rgb(0, 253, 169);
+         /* font-size: larger; */
+      }
+      .fl {
+         float: left;
+         width: 110px;
+         line-height: 35px;
+      }
+   
+      .fontLabel {
+         color: white;
+      }
+   
+      .fr {
+         float: right;
+      }
+   
+      .clr {
+         clear: both;
+      }
+   
+      .box {
+         width: 375px;
+         height: 35px;
+         margin-top: 10px;
+         font-family: verdana;
+         font-size: 15px;
+      }
+   
+      .textBox {
+         height: 35px;
+         width: 190px;
+         border: none;
+         padding-left: 20px;
+      }
+   
+      .new {
+         float: left;
+      }
+   
+      .iconBox {
+         height: 35px;
+         width: 40px;
+         line-height: 38px;
+         font-size: 25px;
+         text-align: center;
+         background: #ff6600;
+      }
+   
+      .radio {
+         color: white;
+         background: #000036;
+         line-height: 38px;
+      }
+   
+      .terms {
+         line-height: 35px;
+         text-align: center;
+         background: #000036;
+         color: white;
+      }
+   
+      .submit {
+         /* float: right; */
+         margin-left: 31vh;
+         border: none;
+         color: white;
+         width: 110px;
+         height: 35px;
+         background: #ff6600;
+         text-transform: uppercase;
+         cursor: pointer;
+         margin-bottom: 5vh;
+         font-size: 2vh;
+         font-weight: 550;
+         font-family: sans-serif;
+      }
+
+      .submit:hover{
+         color:aqua;
+         transition: color .6s;
+      }
+   </style>
+</head>
+
+<body>
+   <!-- Body of Form starts -->
+   
+   <div class="container">
+      <hr><br>
+      <h1 class="h1">Welcome Back!</h1>
+      <h3 class="h3">Log In to your EasyBid Account</h3><br>
+      <hr><br>
+      <!-- <form method="post" autocomplete="on"> -->
+         <!---Email ID---->
+         <form action="/signin" method="Post">
+         <div class="box">
+            <label for="email" class="fl fontLabel"> Email ID : </label>
+            <div class="fl iconBox"><i class="fa fa-envelope" aria-hidden="true"></i></div>
+            <div class="fr">
+               <input type="email" required placeholder="Email Id" class="textBox" name="email">
+            </div>
+            <div class="clr"></div>
+         </div>
+         <!--Email ID----->
+
+
+         <!---Password------>
+         <div class="box">
+            <label for="password" class="fl fontLabel"> Password :</label>
+            <div class="fl iconBox"><i class="fa fa-key" aria-hidden="true"></i></div>
+            <div class="fr">
+               <input type="Password" required placeholder="Password" class="textBox" name="password">
+            </div>
+            <div class="clr"></div>
+         </div>
+         <!---Password---->
+
+
+         <!---Submit Button------>
+         <br>
+         <div class="box" style="background: #000036">
+           <input type="Submit" name="Submit" class="submit" value="LOGIN"> 
+         </div><br>
+      </form>
+         <!---Submit Button----->
+         <p class="acc">Don't have an account? <a href="/register" class="abc">Sign up</a> here</p>
+               
+      <!-- </form> -->
+   </div>
+
+   <!--Body of Form ends--->
+</body>
+
+</html>

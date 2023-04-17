@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>List Product</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../../public/css/custom.css">
+    
+    <style>
+      /* Basic styles */
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+      }
+      h1 {
+        text-align: center;
+      }
+      form {
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #fff;
+        box-shadow: 0 0 10px rgba(0,0,0,0.3);
+        border-radius: 5px;
+      }
+      label {
+        display: block;
+        margin-bottom: 10px;
+        font-weight: bold;
+      }
+      input[type="text"], textarea {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        margin-bottom: 20px;
+        box-sizing: border-box;
+        background-color: rgb(255, 255, 255, );
+
+        /* background-color: transparent; */
+      }
+
+      ::placeholder{
+        color: black;
+      }
+      input[type="submit"] {
+        background-color: #4CAF50;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      /* Specific styles for the product listing form */
+      .auction-form label[for="product-name"] {
+        margin-top: 20px;
+      }
+      .auction-form label[for="product-description"] {
+        margin-top: 20px;
+      }
+      .auction-form label[for="product-image"] {
+        margin-top: 20px;
+      }
+      .auction-form label[for="starting-price"] {
+        margin-top: 20px;
+      }
+      .auction-form label[for="auction-duration"] {
+        margin-top: 20px;
+      }
+      .auction-form label[for="shipping-cost"] {
+        margin-top: 20px;
+      }
+
+   .under {
+       display: inline-block;
+   }
+    </style>
+  </head>
+  <body style="background-image: url(../../public/images/other/img6.jpg);">
+    <div class="side">
+      <div id="bo">
+          <div class="under" style="display:inline-block;">
+              <img src="../../public/images/other/logo2.png" alt="" height="60px" width="68px">
+          </div>
+          <div class="under">
+              <a href="/">Easy bid</a>
+          </div>
+      </div>
+      <a href="../index.html"><i class="fa fa-home ele" id="non-active">&nbsp;&nbsp;Home</i></a>
+
+      <h2 style="padding:2vh; margin-top:1vh; color:rgb(241, 42, 11);">User Account</h2>
+      <a href="profile.html"><i class="fa fa-user ele" id="non-active">&nbsp;&nbsp;Profile</i></a>
+      <a href="wishlist.html"><i class="fa fa-heart-o ele" id="non-active">&nbsp;&nbsp;Wishlist</i></a>
+      <a href="purchases.html"><i class="fa fa-money ele" id="non-active">&nbsp;&nbsp;Purchases</i></a>
+      <a href="bid.html"><i class="fa fa-gavel ele" id="non-active">&nbsp;&nbsp;Bids</i></a>
+      <a href="notifications.html"><i class="fa fa-bell ele" id="non-active">&nbsp;&nbsp;Notifications</i></a>
+
+      <h2 style="padding:2vh; margin-top:2vh; color:rgb(241, 42, 11)">Seller Section</h2>
+      <a href="list_product.html"><i class="fa fa-archive ele" id="active">&nbsp;&nbsp; List Your Product</i></a>
+      <a href="selling_history.html"><i class="fa fa-handshake-o ele" id="non-active">&nbsp;&nbsp;Selling
+              History</i></a>
+  </div>
+
+  <section style="padding-left:38vh; padding-top: 4vh;"> 
+    <h1>List a Product for Auction</h1>
+    <form class="auction-form" style="background-color: rgb(255, 255, 255);">
+      <label for="product-name">Product Name:</label>
+      <input type="text" id="product-name" name="product-name" placeholder="Enter product name">
+      
+      <label for="product-description">Product Description:</label>
+      <textarea id="product-description" name="product-description" placeholder="Enter product description"></textarea>
+      
+      <label for="product-image">Product Image:</label>
+      <input type="file" id="product-image" name="product-image">
+      
+      <label for="starting-price">Starting Price:</label>
+      <input type="text" id="starting-price" name="starting-price" placeholder="Enter starting price">
+      
+      <label for="auction-duration">Auction Duration (in days):</label>
+      <input type="text" id="auction-duration" name="auction-duration" placeholder="Enter auction duration">
+      
+      <label for="shipping-cost">Shipping Cost:</label>
+      <input type="text" id="shipping-cost" name="shipping-cost" placeholder="Enter shipping cost">
+      
+      <center><input type="submit" value="List Product"></center>
+    </form>
+  </section>
+
+  <script>
+    
+    // if (window.confirm("You have not registered as a seller Do you want to register as a seller?"))
+    // {
+    //   window.location = "register_seller.html"
+    // }
+    // else{
+    //   window.location = "profile.html"
+    // }
+  </script>
+  </body>
+</html>

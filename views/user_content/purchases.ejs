@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../../public/css/custom.css">
+    <title>Document</title>
+    <style>
+
+   .side {
+       width: 220px;
+       background-color: #000036;
+       height: 100%;
+       position: fixed;
+       padding: 2vh;
+       color: white;
+       box-shadow: 0 30px 40px 0px rgba(62, 62, 201, .8);
+   }
+
+   #bo {
+       height: 10vh;
+       border-bottom: .6px solid #3e3ec9;
+   }
+
+   #active {
+       /* background-color: #4934d3; */
+       background-image: linear-gradient(60deg, rgb(66, 53, 149), rgb(47, 17, 239));
+       margin-top: 2vh;
+       margin-left: -6px;
+       /* margin-right: 10px; */
+       width: 200px;
+       /* text-align: center; */
+       border-radius: 5px;
+       cursor: pointer;
+   }
+
+   #non-active {
+       margin-top: 2vh;
+       margin-left: -6px;
+       /* margin-right: 10px; */
+       width: 200px;
+       /* text-align: center; */
+
+   }
+
+   #non-active:hover {
+       background-color: #4934d3;
+       border-radius: 5px;
+       cursor: pointer;
+       /* transition: background-color .4s; */
+   }
+
+
+   .side .under a {
+       color: white;
+       /* padding: 16px; */
+       text-decoration: none;
+       font-size: 4vh;
+       font-weight: 500;
+   }
+
+   .under {
+       display: inline-block;
+   }
+
+   section{
+    background-image:url("../../public/images/other/img3.jpg");
+    /* background-repeat: no-repeat; */
+    background-repeat: repeat-y;
+    background-attachment: fixed;
+    background-size: cover;
+
+   }
+
+   #img{
+    /* object-fit: cover; */
+    object-fit: contain;
+   }
+   </style>
+</head>
+<body>
+    <div class="side">
+        <div id="bo">
+            <div class="under">
+                <img src="../../public/images/other/logo2.png" alt="" height="60px" width="68px">
+            </div>
+            <div class="under">
+                <a href="/">Easy bid</a>
+            </div>
+        </div>
+       <a href="../index.html"><i class="fa fa-home ele" id="non-active">&nbsp;&nbsp;Home</i></a>
+
+        <h2 style="padding:2vh; margin-top:1vh; color:rgb(241, 42, 11);">User Account</h2>
+        <a href="profile.html"><i class="fa fa-user ele" id="non-active">&nbsp;&nbsp;Profile</i></a>
+        <a href="wishlist.html"><i class="fa fa-heart-o ele" id="non-active">&nbsp;&nbsp;Wishlist</i></a>
+        <a href="purchases.html"><i class="fa fa-money ele" id="active">&nbsp;&nbsp;Purchases</i></a>
+        <a href="bid.html"><i class="fa fa-gavel ele" id="non-active">&nbsp;&nbsp;Bids</i></a>
+        <a href="notifications.html"><i class="fa fa-bell ele" id="non-active">&nbsp;&nbsp;Notifications</i></a>
+
+        <h2 style="padding:2vh; margin-top:2vh; color:rgb(241, 42, 11)">Seller Section</h2>
+        <a href="list_product.html"><i class="fa fa-archive ele" id="non-active">&nbsp;&nbsp; List Your Product</i></a>
+        <a href="selling_history.html"><i class="fa fa-handshake-o ele" id="non-active">&nbsp;&nbsp;Selling
+                History</i></a>
+    </div>
+    
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+    <section style="padding-left:35vh; padding-right:8vh; padding-top:5vh; background-color: #101046; ; min-height:100vh;" >
+        <div class="pb-4 border-b border-gray-600">
+          <h3 class="text-xl font-semibold leading-6 text-gray-800">Latest Entries</h3>
+        </div>
+      
+        <div class="relative mx-auto max-w-7xl">
+          <div class="grid max-w-lg gap-12 mx-auto mt-12 lg:grid-cols-3 lg:max-w-none">
+
+            <div class="flex flex-col mb-12 overflow-hidden cursor-pointer">
+              <a href="/blog-post">
+                <div class="flex-shrink-0">
+                  <img class="object-cover w-full h-48 rounded-lg" id="img" src="../images/Historic Utensils/Bucket/p1.jpg"  alt="">
+                </div>
+              </a>
+              <div class="flex flex-col justify-between flex-1">
+                <a href="/blog-post"></a>
+                <div class="flex-1">
+                  <a href="/blog-post">
+                    <div class="flex pt-6 space-x-1 text-sm text-gray-500">
+                      <time datetime="2020-03-10"> Mar 10, 2020 </time>
+                    </div>
+                  </a>
+                  <a href="#" class="block mt-2 space-y-6">
+                    <h3 class="text-2xl font-semibold leading-none tracking-tighter text-neutral-600" style="color:white;">Ancient Bucket.</h3>
+                    <p class="text-lg font-normal text-gray-500">Filling text so you can see how it looks like with text. Did I said text?</p>
+                  </a>
+                </div>
+              </div>
+            </div>
+      
+            <div class="flex flex-col mb-12 overflow-hidden cursor-pointer">
+              <a href="/blog-post">
+                <div class="flex-shrink-0">
+                  <img class="object-cover w-full h-48 rounded-lg" id="img" src="../images/Historic Utensils/Glass/p1.jpg" alt="">
+                </div>
+              </a>
+              <div class="flex flex-col justify-between flex-1">
+                <a href="/blog-post"></a>
+                <div class="flex-1">
+                  <a href="/blog-post">
+                    <div class="flex pt-6 space-x-1 text-sm text-gray-500">
+                      <time datetime="2020-03-10"> Mar 10, 2020 </time>
+                    </div>
+                  </a>
+                  <a href="#" class="block mt-2 space-y-6">
+                    <h3 class="text-2xl font-semibold leading-none tracking-tighter text-neutral-600" style="color:white;">Typography on app.</h3>
+                    <p class="text-lg font-normal text-gray-500">Filling text so you can see how it looks like with text. Did I said text?</p>
+                  </a>
+                </div>
+              </div>
+            </div>
+      
+            <div class="flex flex-col mb-12 overflow-hidden cursor-pointer">
+              <a href="/blog-post">
+                <div class="flex-shrink-0">
+                  <img class="object-cover w-full h-48 rounded-lg" id="img" src="/assets/images/placeholders/neon-3.jpg" alt="">
+                </div>
+              </a>
+              <div class="flex flex-col justify-between flex-1">
+                <a href="/blog-post"></a>
+                <div class="flex-1">
+                  <a href="/blog-post">
+                    <div class="flex pt-6 space-x-1 text-sm text-gray-500">
+                      <time datetime="2020-03-10"> Mar 10, 2020 </time>
+                      <span aria-hidden="true"> · </span>
+                      <span> 4 min read </span>
+                    </div>
+                  </a>
+                  <a href="#" class="block mt-2 space-y-6">
+                    <h3 class="text-2xl font-semibold leading-none tracking-tighter text-neutral-600" style="color:white;">Typography on app.</h3>
+                    <p class="text-lg font-normal text-gray-500">Filling text so you can see how it looks like with text. Did I said text?</p>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="flex flex-col mb-12 overflow-hidden cursor-pointer">
+                <a href="/blog-post">
+                  <div class="flex-shrink-0">
+                    <img class="object-cover w-full h-48 rounded-lg" src="/assets/images/placeholders/neon-1.jpg" alt="">
+                  </div>
+                </a>
+                <div class="flex flex-col justify-between flex-1">
+                  <a href="/blog-post"></a>
+                  <div class="flex-1">
+                    <a href="/blog-post">
+                      <div class="flex pt-6 space-x-1 text-sm text-gray-500">
+                        <time datetime="2020-03-10"> Mar 10, 2020 </time>
+                        <span aria-hidden="true"> · </span>
+                        <span> 4 min read </span>
+                      </div>
+                    </a>
+                    <a href="#" class="block mt-2 space-y-6">
+                      <h3 class="text-2xl font-semibold leading-none tracking-tighter text-neutral-600">Typography on app.</h3>
+                      <p class="text-lg font-normal text-gray-500">Filling text so you can see how it looks like with text. Did I said text?</p>
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="flex flex-col mb-12 overflow-hidden cursor-pointer">
+                <a href="/blog-post">
+                  <div class="flex-shrink-0">
+                    <img class="object-cover w-full h-48 rounded-lg" src="/assets/images/placeholders/neon-1.jpg" alt="">
+                  </div>
+                </a>
+                <div class="flex flex-col justify-between flex-1">
+                  <a href="/blog-post"></a>
+                  <div class="flex-1">
+                    <a href="/blog-post">
+                      <div class="flex pt-6 space-x-1 text-sm text-gray-500">
+                        <time datetime="2020-03-10"> Mar 10, 2020 </time>
+                        <span aria-hidden="true"> · </span>
+                        <span> 4 min read </span>
+                      </div>
+                    </a>
+                    <a href="#" class="block mt-2 space-y-6">
+                      <h3 class="text-2xl font-semibold leading-none tracking-tighter text-neutral-600">Typography on app.</h3>
+                      <p class="text-lg font-normal text-gray-500">Filling text so you can see how it looks like with text. Did I said text?</p>
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+ <div class="flex flex-col mb-12 overflow-hidden cursor-pointer">
+              <a href="/blog-post">
+                <div class="flex-shrink-0">
+                  <img class="object-cover w-full h-48 rounded-lg" src="/assets/images/placeholders/neon-1.jpg" alt="">
+                </div>
+              </a>
+              <div class="flex flex-col justify-between flex-1">
+                <a href="/blog-post"></a>
+                <div class="flex-1">
+                  <a href="/blog-post">
+                    <div class="flex pt-6 space-x-1 text-sm text-gray-500">
+                      <time datetime="2020-03-10"> Mar 10, 2020 </time>
+                      <span aria-hidden="true"> · </span>
+                      <span> 4 min read </span>
+                    </div>
+                  </a>
+                  <a href="#" class="block mt-2 space-y-6">
+                    <h3 class="text-2xl font-semibold leading-none tracking-tighter text-neutral-600">Typography on app.</h3>
+                    <p class="text-lg font-normal text-gray-500">Filling text so you can see how it looks like with text. Did I said text?</p>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="flex flex-col mb-12 overflow-hidden cursor-pointer">
+                <a href="/blog-post">
+                  <div class="flex-shrink-0">
+                    <img class="object-cover w-full h-48 rounded-lg" src="/assets/images/placeholders/neon-1.jpg" alt="">
+                  </div>
+                </a>
+                <div class="flex flex-col justify-between flex-1">
+                  <a href="/blog-post"></a>
+                  <div class="flex-1">
+                    <a href="/blog-post">
+                      <div class="flex pt-6 space-x-1 text-sm text-gray-500">
+                        <time datetime="2020-03-10"> Mar 10, 2020 </time>
+                        <span aria-hidden="true"> · </span>
+                        <span> 4 min read </span>
+                      </div>
+                    </a>
+                    <a href="#" class="block mt-2 space-y-6">
+                      <h3 class="text-2xl font-semibold leading-none tracking-tighter text-neutral-600">Typography on app.</h3>
+                      <p class="text-lg font-normal text-gray-500">Filling text so you can see how it looks like with text. Did I said text?</p>
+                    </a>
+                  </div>
+                </div>
+              </div>
+   
+          </div>
+        </div>
+      </section>
+</body>
+</html>

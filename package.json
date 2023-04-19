@@ -20,8 +20,13 @@
   },
   "homepage": "https://github.com/SammedSingalkar/Online_auction#readme",
   "dependencies": {
+    "alert": "^5.1.4",
     "ejs": "^3.1.9",
     "express": "^4.18.2",
-    "nodemon": "^2.0.22"
+    "express-session": "^1.17.3",
+    "mysql": "^2.18.1",
+    "nodemailer": "^6.9.1",
+    "nodemon": "^2.0.22",
+    "path": "^0.12.7"
   }
 }

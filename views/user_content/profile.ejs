@@ -13,7 +13,9 @@
 <style>
     div.main {
         max-height: 2000px;
-        min-height: 100vh;
+        min-height: 110vh;
+        max-width: 100%;
+        min-width: 50%;
         padding-left: 250px;
         background-image: url("../../public/images/other/img1.jpg");
     }
@@ -24,8 +26,10 @@
 
     .container1 {
         margin-top: 12vh;
-        height: 550px;
+        min-height: 200px;
+        max-height: 800px;
         width: 700px;
+        /* min-width: 300px; */
         background-color: aqua;
         background-color: rgb(0, 0, 54, .8);
         border-radius: 6px;
@@ -90,6 +94,7 @@
             font-size: 2vh;
             font-weight: 500;
             font-family: sans-serif;
+            margin-bottom: 10px;
 
         }
 
@@ -108,18 +113,18 @@
                 <a href="/">Easy bid</a>
             </div>
         </div>
-        <a href="../index.html"><i class="fa fa-home ele" id="non-active">&nbsp;&nbsp;Home</i></a>
+        <a href="/"><i class="fa fa-home ele" id="non-active">&nbsp;&nbsp;Home</i></a>
 
         <h2 style="padding:2vh; margin-top:1vh; color:rgb(241, 42, 11);">User Account</h2>
-        <a href="profile.html"><i class="fa fa-user ele" id="active">&nbsp;&nbsp;Profile</i></a>
-        <a href="wishlist.html"><i class="fa fa-heart-o ele" id="non-active">&nbsp;&nbsp;Wishlist</i></a>
-        <a href="purchases.html"><i class="fa fa-money ele" id="non-active">&nbsp;&nbsp;Purchases</i></a>
-        <a href="bid.html"><i class="fa fa-gavel ele" id="non-active">&nbsp;&nbsp;Bids</i></a>
-        <a href="notifications.html"><i class="fa fa-bell ele" id="non-active">&nbsp;&nbsp;Notifications</i></a>
+        <a href="/profile"><i class="fa fa-user ele" id="active">&nbsp;&nbsp;Profile</i></a>
+        <a href="/wishlist"><i class="fa fa-heart-o ele" id="non-active">&nbsp;&nbsp;Wishlist</i></a>
+        <a href="/purchases"><i class="fa fa-money ele" id="non-active">&nbsp;&nbsp;Purchases</i></a>
+        <a href="/bid"><i class="fa fa-gavel ele" id="non-active">&nbsp;&nbsp;Bids</i></a>
+        <a href="/notify"><i class="fa fa-bell ele" id="non-active">&nbsp;&nbsp;Notifications</i></a>
 
         <h2 style="padding:2vh; margin-top:2vh; color:rgb(241, 42, 11)">Seller Section</h2>
-        <a href="list_product.html"><i class="fa fa-archive ele" id="non-active">&nbsp;&nbsp; List Your Product</i></a>
-        <a href="selling_history.html"><i class="fa fa-handshake-o ele" id="non-active">&nbsp;&nbsp;Selling
+        <a href="/list_product"><i class="fa fa-archive ele" id="non-active">&nbsp;&nbsp; List Your Product</i></a>
+        <a href="/selling_history"><i class="fa fa-handshake-o ele" id="non-active">&nbsp;&nbsp;Selling
                 History</i></a>
     </div>
 
@@ -131,58 +136,66 @@
             <h4 style="margin-top:1vh;color:white;">Complete Your Profile</h4>
         </div>
         <div class="container1">
+            <% result.forEach((element) => { %>
+                <form action="">
             <div class="form">
                 <label for="firstname">Name:</label>
-                <input type="text" Name="firstname" class="form1" id="firstname" placeholder="Enter Your firstname"
-                    value="Sammed" readonly>
-            </div>
-            <div class="form">
-                <label for="lastname">Last Name:</label>
-                <input type="text" Name="lastname" class="form1" id="lastname" placeholder="Enter Your lastname"
-                    value="Singalkar" readonly>
-            </div>
-            <div class="form">
-                <label for="number">Mobile No:</label>
-                <input type="tels" Name="number" class="form1" size="10" id="mobile" placeholder="Enter Your mobile no"
-                    value="7896541230" readonly>
+                <input type="text" Name="name" class="form1" id="name" placeholder="Enter Your Name"
+                    value="<%=element.Name%>" readonly>
             </div>
             <div class="form">
                 <label for="email">Email:</label>
                 <input type="email" Name="email" class="form1" id="email" placeholder="Enter Your email id"
-                    value="abc@gmail.com" readonly>
+                    value="<%=element.Email%>" readonly>
+            </div>
+            <div class="form">
+                <label for="addhar">Addhar Number:</label>
+                <input type="text" Name="addhar" class="form1" id="addhar" placeholder="Enter Your Addhar Card Number"
+                    value="<%=element.Aadhar_Card%>" readonly>
+            </div>
+            <div class="form">
+                <label for="number">Mobile No:</label>
+                <input type="tels" Name="number" class="form1" size="10" id="mobile" placeholder="Enter Your mobile no"
+                    value="<%=element.Mobile_No%>" readonly>
+            </div>
+            <div class="form">
+                <label for="number">Date of Birth:</label>
+                <input type="date" Name="dob" class="form1" id="dob"
+                    value="<%=element.DOB.toISOString().slice(0, 10);%>" readonly>
+            </div>
+            <div class="form">
+                <label for="address">Shipping Address:</label>
+                <textarea name="address" id="" cols="30" rows="10" class="form1" readonly><%=element.Shipping_Add%></textarea>
+                <!-- <input type="text" Name="address" class="form1" id="address" placeholder="Enter Your Shpping Address"
+                     readonly> -->
             </div>
             <div class="form">
                 <label for="password">Password:</label>
                 <input type="password" Name="password" class="form1" id="password" placeholder="Enter Your password"
-                    value="lfdnjkfhhojj84r80u" readonly>
-            </div>
-            <div class="form">
-                <label for="gender">Gender:</label>
-                <input type="radio" Name="gender" id="gender" value="male" checked
-                    style="margin-left: 2vh; margin-top:4vh; color:black;"><Strong style="font-size:2.5vh;">
-                    Male</Strong>
-                <input type="radio" Name="gender" id="gender" value="female"
-                    style="margin-left:4vh; margin-top:4vh; color:black;"><Strong style="font-size:2.5vh;">
-                    Female</Strong>
+                    value="<%=element.Password%>" readonly>
             </div>
             <button type="submit" id="form_button">Edit Profile</button>
+        </form>
+            <% }); %>
         </div>
 
 
 
         <div class="container1"
             style="width:60vh;  position:absolute; margin-left: 3vh; height: 140px; margin-top: 20vh; ">
+            <% result.forEach((element) => { %>
             <div class="boxs"
                 style="background-image:none; width: 5vh;  visibility: hidden; margin-top: -24vh; margin-left: -7vh;">
                 <img src="../images/my_img.jpeg" alt="Not found" height="160px" width="190px"
                     style="border-radius:50%; margin-left:22vh; position:s relative; visibility:visible;">
 
             </div>
-            <h3 style="text-align:center;">Sammed Singalkar</h3>
+            <h3 style="text-align:center;"><%=element.Name%></h3>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis sequi quas suscipit quaerat voluptas
                 molestiae omnis voluptatibus tenetur? Explicabo nulla animi eligendi! Eos placeat, est odit
                 necessitatibus nisi, earum vitae culpa consectetur quibusdam repellat aspernatur beatae in eveniet illo
                 asperiores nulla iusto sed.</p>
+                <% }); %>
         </div>
     </div>
 </body>

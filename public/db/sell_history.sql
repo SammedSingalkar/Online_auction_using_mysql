@@ -20,3 +20,4 @@ INSERT INTO `sell_history` (`Item_Id`, `Item_Name`, `Seller_Id`) VALUES
 
 select * from sell_history;
 drop table sell_history;
+SELECT * FROM sell_history JOIN item ON sell_history.Item_Id = item.Item_Id and sell_history.Seller_Id = item.Seller_Id where sell_history.Seller_Id = "sam@101";  

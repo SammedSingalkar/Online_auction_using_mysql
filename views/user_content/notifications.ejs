@@ -10,51 +10,40 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="../../public/css/custom.css">
     <title>Notifications</title>
-</head>
-<style>
 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss/dist/tailwind.min.css">
+    <style>
     .under {
         display: inline-block;
     }
-
-    .container1 {
-        margin-top: 12vh;
-        padding-bottom: 5vh;
-        min-height: 300px;
-        max-height: 800px;
-        width: 800px;
-        /* background-image: linear-gradient(60deg, rgb(47, 186, 196), aqua); */
-        border-radius: 6px;
-        padding-left: 5vh;
-        padding-top: 7vh;
-        /* display: grid; */
-        /* grid-template-columns: 300px 1fr; */
-        display: inline-block;
-        margin-left: 10vh;
-        background-color:rgb(0, 0, 54,.8);
-    }
-
-    .boxs {
-        position: absolute;
-        margin-top: 6vh;
-        height: 6vh;
-        margin-left: 20vh;
-        border-radius: 6px;
-        width: 650px;
-        padding: 2vh;
-        /* display: inline-flex; */
-        background-color:rgba(209, 108, 7, 0.9);
-        display: inline-block;
-    }
-
     div.main {
         max-height: 2000px;
         min-height: 745px;
         padding-left: 250px;
         background-image: url(../../public/images/other/img2.jpg);
     }
+
+     /* Custom CSS */
+     .delete-button {
+        cursor: pointer;
+        transition: transform 0.2s ease-in-out;
+      }
+      .delete-button:hover {
+        transform: scale(1.2);
+      }
+
+      .side {
+    width: 220px;
+    background-color: #000036;
+    height: 100%;
+    position: fixed;
+    padding: 2vh;
+    color: white;
+    box-shadow: 0 30px 40px 0px rgba(62, 62, 201, .8);
+}
 </style>
 
+</head>  
 <body>
     <div class="side">
         <div id="bo">
@@ -82,81 +71,55 @@
 
     <div class="main">
         <h3 style="padding-top:2vh; margin-left:4vh; color:white">Notifications</h3>
-        <div class="boxs">
-            <h2 style="color:#0d0b0b; font-size:4vh; text-align: center;">Notifications</h2>
-        </div>
-        <div class="container1">
-            <div class="notify">
-                <a href="/" class="closebtn">&times;</a>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos quod nostrum repellendus, eum dolorem omnis
-                at amet, alias esse hic facere aliquam odit officiis rerum repellat maxime repudiandae, voluptatibus
-                voluptates dolorum deserunt consectetur minus sint aspernatur eius! Earum nesciunt perspiciatis ea omnis
-                repudiandae.
-            </div>
-            <div class="notify" style="background-color:rgb(36, 46, 46) ;">
-                <a href="/" class="closebtn">&times;</a>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos quod nostrum repellendus, eum dolorem omnis
-                at amet, alias esse hic facere aliquam odit officiis rerum repellat maxime repudiandae, voluptatibus
-                voluptates dolorum deserunt consectetur minus sint aspernatur eius! Earum nesciunt perspiciatis ea omnis
-                repudiandae.
-            </div>
-            <div class="notify" style="background-color:rgb(142, 13, 248) ;">
-                <a href="/" class="closebtn">&times;</a>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos quod nostrum repellendus, eum dolorem omnis
-                at amet, alias esse hic facere aliquam odit officiis rerum repellat maxime repudiandae, voluptatibus
-                voluptates dolorum deserunt consectetur minus sint aspernatur eius! Earum nesciunt perspiciatis ea omnis
-                repudiandae.
-            </div>
-            <div class="notify" style="background-color:rgb(248, 104, 9) ;">
-                <a href="/" class="closebtn">&times;</a>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos quod nostrum repellendus, eum dolorem omnis
-                at amet, alias esse hic facere aliquam odit officiis rerum repellat maxime repudiandae, voluptatibus
-                voluptates dolorum deserunt consectetur minus sint aspernatur eius! Earum nesciunt perspiciatis ea omnis
-                repudiandae.
-            </div>
-            <div class="notify" style="background-color:rgb(248, 4, 223) ;">
-                <a href="/" class="closebtn">&times;</a>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos quod nostrum repellendus, eum dolorem omnis
-                at amet, alias esse hic facere aliquam odit officiis rerum repellat maxime repudiandae, voluptatibus
-                voluptates dolorum deserunt consectetur minus sint aspernatur eius! Earum nesciunt perspiciatis ea omnis
-                repudiandae.
-            </div>
-        </div>
-
-        <style>
-            .notify {
-                margin-left: 3vh;
-                margin-right: 3vh;
-                margin-top: 2vh;
-                width: 95vh;
-                min-height: 8vh;
-                max-height: 14vh;
-                background-color: #eb0e0e;
-                border-radius: 5px;
-                /* padding: 2vh; */
-                position: relative;
-                overflow-x: hidden;
-                padding: 8px 8px 8px 32px;
-                color:white;
-                /* box-shadow: 10px 20px 20px 20px rgba(209, 240, 7, 0.8); */
-            }
-            .notify .closebtn{
-                display: none;
-            }
-
-            .notify:hover .closebtn {
-                /* position: absolute; */
-                top: 0;
-                float:right;
-                /* right: 28px; */
-                font-size: 40px;
-                /* margin-left: 50px; */
-                color: black;
-                margin-top: -2.8vh;
-                margin-right: -1vh;
-                display: block;
-            }
-        </style>
+        <div class="container mx-auto px-4 py-8">
+            <h1 class="text-3xl font-bold mb-4">Notifications</h1>
+            <div class="flex flex-col space-y-4">
+              <% result.forEach((element) => { %>
+                <div class="bg-white shadow rounded-md p-4 flex items-center justify-between">
+                    <div class="flex items-center">
+                      <% if (element.type==="Success"){%>
+                        <div class="bg-green-500 rounded-full h-8 w-8 flex items-center justify-center mr-4">
+                          <svg class="h-6 w-6 text-white" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
+                            <path d="M5 13l4 4L19 7"></path>
+                          </svg>
+                        </div>
+                      <%} 
+                      else if (element.type==="Warning"){%>
+                        <div class="bg-yellow-500 rounded-full h-8 w-8 flex items-center justify-center mr-4">
+                          <svg class="h-6 w-6 text-white" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
+                            <path d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
+                          </svg>
+                        </div>
+                      <%} else if (element.type==="Error"){%>
+                        <div class="bg-red-500 rounded-full h-8 w-8 flex items-center justify-center mr-4">
+                          <svg class="h-6 w-6 text-white" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
+                            <path d="M12 4v6m0 0v6m0-6h6m-6 0H6"></path>
+                          </svg>
+                        </div>
+                      <%} else{%>
+                        <div class="bg-blue-500 rounded-full h-8 w-8 flex items-center justify-center mr-4">
+                          <svg class="h-6 w-6 text-white" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
+                            <path d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                          </svg>
+                        </div>
+                      <%}%>
+                      <div class="text-sm">
+                        <p class="font-bold"><%= element.type %></p>
+                        <p class="text-gray-500"><%= element.Message %></p>
+                      </div>
+                    </div>
+                    <button class="text-gray-500 hover:text-red-500" onclick="deleteNotification()">Delete</button>
+                  </div>
+                <% }) %>
+        <script>
+          // Handle delete button clicks
+          const deleteButtons = document.querySelectorAll('.delete-button');
+          deleteButtons.forEach(button => {
+            button.addEventListener('click', () => {
+              button.parentElement.remove();
+            });
+          });
+        </script>
 </body>
 
 </html>

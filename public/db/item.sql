@@ -22,7 +22,7 @@ INSERT INTO `item` (`Item_Id`, `Item_Name`, `Description`, `Starting_Bid_Price`,
 (104, '16th century Book Document', 'Two book or Bible  fragments with two unknown woodcuts from the 16th century, including the city of Jerusalem', 45112, 'active', 55562, 'jett@101', '2023-01-05 19:38:32', '2023-04-18 15:53:30', 'Books'),
 (105, '1962 Mercedes-Benz Unimog-S 404', 'A Spartan cabin up front makes the Unimog at home on a farm or in military use, while a variety of layouts including pickup beds, cargo boxes, and six-wheel drive variants allow for wide customization.', 900000, 'sold', 1100000, 'adele@104', '2023-01-01 19:38:32', '2023-04-18 19:38:32', 'Car'),
 (106, 'XF Chinese Brown pottery TEAPOT utensils', 'The item is approximately 14 x 10 x 8.5 centimeters\r\nTotal weight: 215.5 g\r\nThis item is sold as is as pictured. Please review all images\r\nWith wear and imperfections to the pottery', 15000, 'sold', 15100, 'henrey@107', '2023-04-04 19:38:32', '2023-04-18 15:53:30', 'Antique Utensils'),
-(107, 'Planet Orbit', 'An old painting of Solar System Planet Orbit.', 1500, 'active', 2000, 'ram@102', '2023-04-18 15:53:30', '2023-09-27 19:38:32', 'Arts');
+(107, 'Planet Orbit', 'An old painting of Solar System Planet Orbit.', 1500, 'active', 2000, 'sam@101', '2023-04-18 15:53:30', '2023-09-27 19:38:32', 'Arts');
 
 select * from item;
 drop table item;

@@ -12,7 +12,7 @@ CREATE TABLE `user` (
   primary key(User_Id)
 );
 
-INSERT INTO `user` (`Name`, `Email`, `Aadhar Card`, `Mobile No`, `DOB`, `User_Id`, `Password`, `Shipping_Add`) VALUES
+INSERT INTO `user` (`Name`, `Email`, `Aadhar_Card`, `Mobile_No`, `DOB`, `User_Id`, `Password`, `Shipping_Add`) VALUES
 ('Adele', 'adele@gmail.com', 784598851254, 8665232603, '1993-09-08', 'adele@104', 'adele@104', '5454 Beier Plain, Apt. 147, 74963-4646, New Elvie, Montana, United States'),
 ('Alan', 'alan@gmail.com', 798465541252, 8989598778, '1976-11-04', 'alan@105', 'alan@105', '181 Valentine Union, Suite 792, 80312-1723, Port Babymouth, Kansas, United States'),
 ('Alfred', 'alfred@gmail.com', 123809812398, 7878989856, '1972-04-12', 'alfred@106', 'alfred@106', '4498 Nolan Garden, Suite 697, 83482-9959, Lubowitzbury, California, United States'),

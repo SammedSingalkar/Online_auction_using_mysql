@@ -46,10 +46,10 @@
 			<div class="dropdown">
 				<a id="account"> My Account </a>
 				<div class="dropdown-content">
-					<a class="drop-line" href="/user_content/profile">Your Account</a>
-					<a class="drop-line" href="/user_content/purchases">Your Puchases</a>
-					<a class="drop-line" href="/user_content/wishlist">Your Wishlist</a>
-					<a class="drop-line" href="/signin">Sign in</a>
+					<a class="drop-line" href="/profile">Your Account</a>
+					<a class="drop-line" href="/purchases">Your Puchases</a>
+					<a class="drop-line" href="/wishlist">Your Wishlist</a>
+					<a class="drop-line" href="<%=link%>"><%=msg%></a>
 				</div>
 			</div>
 		</a>
@@ -86,7 +86,7 @@
 							<a href="/"
 								style="font-family: sans-serif; font-size: large; font-weight: 700;">Categories</a>
 							<ul class="sub-menu">
-								<li><a href="/" style="color:white; font-size:2vh; font-weight: 500;">All</a></li>
+								<li><a href="/all/categories" style="color:white; font-size:2vh; font-weight: 500;">All</a></li>
 								<li><a href="/" style="color:white; font-size:2vh; font-weight: 500;"><img
 											src="../public/images/other/category/vehicle.png" alt="" height="15px" width="15px">
 										Vehicles</a></li>
@@ -248,16 +248,17 @@
 							<div class="bbb_viewed_slider_container">
 								<div class="owl-carousel owl-theme bbb_viewed_slider">
 
+									<% result.forEach((element)=> { %>
 									<div class="owl-item">
 										<!-- <div class="bbb_viewed_item discount d-flex flex-column align-items-center justify-content-center text-center"> -->
-										<a href="/product_detail"><div class="bbb_viewed_image"><img src="images/antique.png" alt="" width="50px" height="140px"></div></a>
+										<a href="/product_detail/<%=element.Item_Id%>"><div class="bbb_viewed_image"><img src="images/antique.png" alt="" width="50px" height="140px"></div></a>
 										<div class="bbb_viewed_content text-center">
 											<div class="bbb_viewed_price"
 												style="color:white;  font-family: sans-serif; font-size: larger; font-weight: 700;">
-												Current price ₹8544</div>
+												Current price <%=element.Curr_Bid_Price%></div>
 											<div class="bbb_viewed_name"><a
 													style="color:white; font-family: sans-serif; font-size: larger; font-weight: 700;"
-													href="product_detail.html">Coins</a></div>
+													href="/product_detail/<%=element.Item_Id%>"><%=element.Item_Name%></a></div>
 											<button class="bid_button"
 												style="color:white; font-family: sans-serif; font-size: larger; font-weight: 700;"
 												type="Submit">Bid</button>
@@ -268,9 +269,10 @@
 										</ul>
 										<!-- </div> -->
 									</div>
+									<% }) %>
 
-									<div class="owl-item">
-										<!-- <div class="bbb_viewed_item discount d-flex flex-column align-items-center justify-content-center text-center"> -->
+
+									<!-- <div class="owl-item">
 										<a href="product_detail.html"><div class="bbb_viewed_image"><img src="images/category/vehicles/1951 Willys Station Wagon/p11.jpg" alt="" width="50px" height="140px"></div></a>
 										<div class="bbb_viewed_content text-center">
 											<div class="bbb_viewed_price"
@@ -287,113 +289,9 @@
 											<li class="item_mark item_discount"></li>
 											<li class="item_mark item_new">new</li>
 										</ul>
-										<!-- </div> -->
-									</div>
+									</div> -->
 
-									<div class="owl-item">
-										<!-- <div class="bbb_viewed_item discount d-flex flex-column align-items-center justify-content-center text-center"> -->
-										<div class="bbb_viewed_image"><img src="images/category/jwelery.png" alt="" width="50px" height="140px"></div>
-										<div class="bbb_viewed_content text-center">
-											<div class="bbb_viewed_price"
-												style="color:white;  font-family: sans-serif; font-size: larger; font-weight: 700;">
-												Current price ₹85444</div>
-											<div class="bbb_viewed_name"><a
-													style="color:white; font-family: sans-serif; font-size: larger; font-weight: 700;"
-													href="/">Jwelery</a></div>
-											<button class="bid_button"
-												style="color:white; font-family: sans-serif; font-size: larger; font-weight: 700;"
-												type="Submit">Bid</button>
-										</div>
-										<ul class="item_marks">
-											<li class="item_mark item_discount"></li>
-											<li class="item_mark item_new">new</li>
-										</ul>
-										<!-- </div> -->
-									</div>
-
-									<div class="owl-item">
-										<!-- <div class="bbb_viewed_item discount d-flex flex-column align-items-center justify-content-center text-center"> -->
-										<div class="bbb_viewed_image"><img src="images/category/coins.png" alt="" width="50px" height="140px"></div>
-										<div class="bbb_viewed_content text-center">
-											<div class="bbb_viewed_price"
-												style="color:white;  font-family: sans-serif; font-size: larger; font-weight: 700;">
-												Current price ₹8544</div>
-											<div class="bbb_viewed_name"><a
-													style="color:white; font-family: sans-serif; font-size: larger; font-weight: 700;"
-													href="/">Coins</a></div>
-											<button class="bid_button"
-												style="color:white; font-family: sans-serif; font-size: larger; font-weight: 700;"
-												type="Submit">Bid</button>
-										</div>
-										<ul class="item_marks">
-											<li class="item_mark item_discount"></li>
-											<li class="item_mark item_new">new</li>
-										</ul>
-										<!-- </div> -->
-									</div>
-
-									<div class="owl-item">
-										<!-- <div class="bbb_viewed_item discount d-flex flex-column align-items-center justify-content-center text-center"> -->
-										<div class="bbb_viewed_image"><img src="images/Historic Utensils/Glass/p1.jpg" alt="" width="50px" height="140px"></div>
-										<div class="bbb_viewed_content text-center">
-											<div class="bbb_viewed_price"
-												style="color:white;  font-family: sans-serif; font-size: larger; font-weight: 700;">
-												Current price ₹9418</div>
-											<div class="bbb_viewed_name"><a
-													style="color:white; font-family: sans-serif; font-size: larger; font-weight: 700;"
-													href="/">Glass</a></div>
-											<button class="bid_button"
-												style="color:white; font-family: sans-serif; font-size: larger; font-weight: 700;"
-												type="Submit">Bid</button>
-										</div>
-										<ul class="item_marks">
-											<li class="item_mark item_discount"></li>
-											<li class="item_mark item_new">new</li>
-										</ul>
-										<!-- </div> -->
-									</div>
-
-									<div class="owl-item">
-										<!-- <div class="bbb_viewed_item discount d-flex flex-column align-items-center justify-content-center text-center"> -->
-										<div class="bbb_viewed_image"><img src="images/Historic Utensils/Pot/p1.jpg" alt="" width="50px" height="140px"></div>
-										<div class="bbb_viewed_content text-center">
-											<div class="bbb_viewed_price"
-												style="color:white;  font-family: sans-serif; font-size: larger; font-weight: 700;">
-												Current price ₹5500</div>
-											<div class="bbb_viewed_name"><a
-													style="color:white; font-family: sans-serif; font-size: larger; font-weight: 700;"
-													href="/">Pot</a></div>
-											<button class="bid_button"
-												style="color:white; font-family: sans-serif; font-size: larger; font-weight: 700;"
-												type="Submit">Bid</button>
-										</div>
-										<ul class="item_marks">
-											<li class="item_mark item_discount"></li>
-											<li class="item_mark item_new">new</li>
-										</ul>
-										<!-- </div> -->
-									</div>
-
-									<div class="owl-item">
-										<!-- <div class="bbb_viewed_item discount d-flex flex-column align-items-center justify-content-center text-center"> -->
-										<div class="bbb_viewed_image"><img src="images/Historic Utensils/Vaati/p1.jpg" alt="" width="50px" height="140px"></div>
-										<div class="bbb_viewed_content text-center">
-											<div class="bbb_viewed_price"
-												style="color:white;  font-family: sans-serif; font-size: larger; font-weight: 700;">
-												Current price ₹2555</div>
-											<div class="bbb_viewed_name"><a
-													style="color:white; font-family: sans-serif; font-size: larger; font-weight: 700;"
-													href="/">Bowl</a></div>
-											<button class="bid_button"
-												style="color:white; font-family: sans-serif; font-size: larger; font-weight: 700;"
-												type="Submit">Bid</button>
-										</div>
-										<ul class="item_marks">
-											<li class="item_mark item_discount"></li>
-											<li class="item_mark item_new">new</li>
-										</ul>
-										<!-- </div> -->
-									</div>
+									
 
 									<div class="owl-item">
 										<!-- <div class="bbb_viewed_item discount d-flex flex-column align-items-center justify-content-center text-center"> -->
@@ -435,7 +333,7 @@
 			<h3>Curious to khow if your item is suitable for one of our upcoming sales?</h3>
 			<h3 style="margin-top:5vh;">Provide information and share images to request an online estimate now.</h3>
 
-			<button type="submit" id="start_selling">START SELLING</button>
+			<button type="submit" id="start_selling" onclick="window.location = `<%=link1%>`">START SELLING</button>
 
 		</div>
 

@@ -117,55 +117,75 @@
       <h1 class="h1">Create Account</h1>
       <h3 class="h3">Sign Up to EasyBid and Start Bidding</h3><br>
       <hr><br>
-      <form method="post" autocomplete="on">
-         <!--First name-->
+      <form method="post" autocomplete="on" action="/register">
+         <!--Name-->
          <div class="box">
-            <label for="firstName" class="fl fontLabel"> First Name : </label>
+            <label for="firstName" class="fl fontLabel"> Name : </label>
             <div class="new iconBox">
                <i class="fa fa-user" aria-hidden="true"></i>
             </div>
             <div class="fr">
-               <input type="text" name="firstName" placeholder="First Name" class="textBox" autofocus="on" required>
+               <input type="text" name="name" placeholder="Enter Your Name" class="textBox" autofocus="on" required>
             </div>
             <div class="clr"></div>
          </div>
-         <!--First name-->
-
-
-         <!--Second name-->
-         <div class="box">
-            <label for="secondName" class="fl fontLabel"> Last Name : </label>
-            <div class="fl iconBox"><i class="fa fa-user" aria-hidden="true"></i></div>
-            <div class="fr">
-               <input type="text" required name="secondName" placeholder="Last Name" class="textBox">
-            </div>
-            <div class="clr"></div>
-         </div>
-         <!--Second name-->
-
-
-         <!---Phone No.------>
-         <div class="box">
-            <label for="phone" class="fl fontLabel"> Phone No. : </label>
-            <div class="fl iconBox"><i class="fa fa-phone" aria-hidden="true"></i></div>
-            <div class="fr">
-               <input type="text" required name="phoneNo" maxlength="10" placeholder="Phone No." class="textBox">
-            </div>
-            <div class="clr"></div>
-         </div>
-         <!---Phone No.---->
-
+         <!--Name-->
 
          <!---Email ID---->
          <div class="box">
             <label for="email" class="fl fontLabel"> Email ID : </label>
             <div class="fl iconBox"><i class="fa fa-envelope" aria-hidden="true"></i></div>
             <div class="fr">
-               <input type="email" required name="email" placeholder="Email Id" class="textBox">
+               <input type="email" name="email" placeholder="Email Id" class="textBox" required >
             </div>
             <div class="clr"></div>
          </div>
          <!--Email ID----->
+
+         <!---Aadhar Card.------>
+         <div class="box">
+            <label for="phone" class="fl fontLabel"> Aadhar Card : </label>
+            <div class="fl iconBox"><i class="fa fa-id-card-o" aria-hidden="true"></i></div>
+            <div class="fr">
+               <input type="text" required name="aadhar" maxlength="16" placeholder="Enter Your Aadhar Number" class="textBox">
+            </div>
+            <div class="clr"></div>
+         </div>
+         <!---Aadhar Card.---->
+
+         <!---Phone No.------>
+         <div class="box">
+            <label for="phone" class="fl fontLabel">Mobile No. : </label>
+            <div class="fl iconBox"><i class="fa fa-phone" aria-hidden="true"></i></div>
+            <div class="fr">
+               <input type="text" required name="mobile" maxlength="10" placeholder="Enter Your Phone No." class="textBox">
+            </div>
+            <div class="clr"></div>
+         </div>
+         <!---Phone No.---->
+
+              <!---Date of Birth.------>
+              <div class="box">
+               <label for="phone" class="fl fontLabel">Date of Birth : </label>
+               <div class="fl iconBox"><i class="fa fa-birthday-cake" aria-hidden="true"></i></div>
+               <div class="fr">
+                  <input type="Date" required name="date"class="textBox">
+               </div>
+               <div class="clr"></div>
+            </div>
+            <!---Date of Birth.---->
+
+            <!---Shipping Address.---->
+            <div class="box">
+               <label for="phone" class="fl fontLabel">Address : </label>
+               <div class="fl iconBox"><i class="fa fa-map-marker" aria-hidden="true"></i></div>
+               <div class="fr">
+                  <input type="text" required name="address"placeholder="Enter Your Shipping Addresss." class="textBox">
+               </div>
+               <div class="clr"></div>
+            </div>
+            <!---Shipping Addresss.---->
+         
 
 
          <!---Password------>
@@ -179,19 +199,11 @@
          </div>
          <!---Password---->
 
-         <!---Gender----->
-         <div class="box radio">
-            <label for="gender" class="fl fontLabel"> Gender : </label>
-            <input type="radio" name="Gender" value="Male" required> Male &nbsp; &nbsp; &nbsp; &nbsp;
-            <input type="radio" name="Gender" value="Female" required> Female
-         </div>
-         <!---Gender--->
-
 
          <!--Terms and Conditions------>
-         <div class="box terms">
+        <a href="/terms_&_conditions"> <div class="box terms">
             <input type="checkbox" name="Terms" required> &nbsp; I accept the terms and conditions
-         </div>
+         </div></a>
          <!--Terms and Conditions------>
 
 

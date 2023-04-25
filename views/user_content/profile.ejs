@@ -7,7 +7,10 @@
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="../../public/css/custom.css">
+    <script src="../../public/script.js"></script>
     <title>profile</title>
+
+    
 </head>
 
 <style>
@@ -137,7 +140,7 @@
         </div>
         <div class="container1">
             <% result.forEach((element) => { %>
-                <form action="">
+                <form action="/profile" method="post">
             <div class="form">
                 <label for="firstname">Name:</label>
                 <input type="text" Name="name" class="form1" id="name" placeholder="Enter Your Name"
@@ -178,8 +181,7 @@
         </form>
             <% }); %>
         </div>
-
-
+        
 
         <div class="container1"
             style="width:60vh;  position:absolute; margin-left: 3vh; height: 140px; margin-top: 20vh; ">

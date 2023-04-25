@@ -47,8 +47,12 @@
                             <thead>
                                 <tr>
                                     <th style="padding-left:15vh;">Product Name</th>
-                                    <th class="text-center"><a style="color:white; padding-left:15vh;"
-                                            class="btn btn-sm btn-outline-danger" href="#">Clear Wishlist</a></th>
+                                    <form action="/wishlist" method="post">
+                                    <th class="text-center">
+                                        <a style=" padding-left:15vh;"
+                                            class="btn btn-sm btn-outline-danger"><button style="background-color: transparent; color:white;" type="submit">Clear Wishlist</button></a>
+                                    </th>
+                                </form>
                                 </tr>
                             </thead>
                             <tbody>
@@ -73,15 +77,22 @@
                                                 
                                                 <div>Current Status - <%=element.Status%>
                                                     <div class="d-inline text-success">Category - <%=element.Category%></div>
+                                                    <form action="/wishlist/<%=element.WatchList_Id%>" method="post">
                                                     <button type="submit">Delete</button>
+                                                   </form>
                                                 </div>
                                             </div>
                                         </div>
                                     </td>
-                                    <td class="text-center"><a class="remove-from-cart" href="#" data-toggle="tooltip"
-                                            title="" data-original-title="Remove item"><i class="icon-cross"></i></a>
-                                    </td>
                                     
+                                        <td class="text-center">
+                                            <a class="remove-from-cart" data-toggle="tooltip" title="" data-original-title="Remove item">
+                                              <i class="icon-cross"></i>
+                                            </a>
+                                        </td>
+                        
+                                      
+                                </form>
                                 </tr>
                                 <% }); %>
                             

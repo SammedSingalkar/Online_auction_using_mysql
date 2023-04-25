@@ -108,10 +108,13 @@
                         <p class="text-gray-500"><%= element.Message %></p>
                       </div>
                     </div>
-                    <button class="text-gray-500 hover:text-red-500" onclick="deleteNotification()">Delete</button>
+                    <!-- <button class="text-gray-500 hover:text-red-500" onclick="deleteNotification()">Delete</button> -->
+                    <form action="/notify/<%=element.Noti_Id%>" method="post">
+                    <button type="submit" class="text-gray-500 hover:text-red-500">Delete</button>
+                  </form>
                   </div>
                 <% }) %>
-        <script>
+        <!-- <script>
           // Handle delete button clicks
           const deleteButtons = document.querySelectorAll('.delete-button');
           deleteButtons.forEach(button => {
@@ -119,7 +122,7 @@
               button.parentElement.remove();
             });
           });
-        </script>
+        </script> -->
 </body>
 
 </html>

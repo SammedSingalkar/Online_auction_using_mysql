@@ -21,6 +21,7 @@
   "homepage": "https://github.com/SammedSingalkar/Online_auction#readme",
   "dependencies": {
     "alert": "^5.1.4",
+    "dotenv": "^16.0.3",
     "ejs": "^3.1.9",
     "express": "^4.18.2",
     "express-fileupload": "^1.4.0",

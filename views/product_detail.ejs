@@ -124,7 +124,7 @@
     </div>
 
     <section>
-    
+        <% result.forEach((element) => { %>
         <div class="middle">
 
             <div class="box2">
@@ -201,19 +201,30 @@
 
             <div class="box2"
                 style="background-color: #101046; width:70vh; border: .6px solid #6d69f4; border-radius:5px; position: absolute; padding: 3vh;">
-                <h2 style="height:12vh;border-bottom:.6px solid grey; color:white;">Name</h2>
-                <h3 style="color:white; font-family: sans-serif;">Price: <strong>₹5000</strong></h3>
+                <h2 style="height:12vh;border-bottom:.6px solid grey; color:white;"><%=element.Item_Name%></h2>
+                <!-- <h3 style="color:white; font-family: sans-serif;">Price: <strong>₹5000</strong></h3> -->
+                <h3 style="color:white; font-family: sans-serif;">Current Price: <strong><%=element.Curr_Bid_Price%></strong></h3>
                 <h3 style="margin-top:4vh;color:white;font-weight:550; font-family: sans-serif;">Product Details</h3>
+                <div style="color:white">
+                <h4>Category - <%=element.Category%></h4>
+                <% const auctionStartTime = new Date(element.Auction_Start_Time); %>
+<h4>Auction Start Time - <%= auctionStartTime.getDate() + '/' + (auctionStartTime.getMonth()+1) + '/' + auctionStartTime.getFullYear() + ' ' + auctionStartTime.getHours() + ':' + auctionStartTime.getMinutes() + ':' + auctionStartTime.getSeconds(); %></h4>
+<% const auctionEndTime = new Date(element.Auction_End_Time); %>
+<h4>Auction End Time - <%= auctionEndTime.getDate() + '/' + (auctionEndTime.getMonth()+1) + '/' + auctionEndTime.getFullYear() + ' ' + auctionEndTime.getHours() + ':' + auctionEndTime.getMinutes() + ':' + auctionEndTime.getSeconds(); %></h4>
+<h4>Status - <%=element.Status%></h4>
+
+            </div>
             </div>
         </div>
-
+        <% }) %>
     </section>
 
     <section id="down">
+        <% result.forEach((element) => { %>
         <div class="downside">
-            <h1>Name here................</h1>
+            <h1 style="color:white;"><%=element.Item_Name%></h1>
             <div id="block">
-                <h3>Current Price <strong>₹5000</strong></h3>
+                <h3>Current Price <strong><%=element.Curr_Bid_Price%></strong></h3>
                 <h4>Buyer's Premium <strong>20%</strong></h4>
                 <h4>Bid Increment (IND) <strong>₹500</strong></h4>
             </div>
@@ -228,8 +239,10 @@
                 </div>
 
             </div>
+            <form action="/product_detail/<%=element.Item_Id%>" method="post">
             <button type="submit" id="bide_button">Buy Now</button>
             <button type="submit" id="bide_button">Add To Wishlist</button>
+            </form>
         </div>
 
         <div class="downside"
@@ -264,10 +277,11 @@
                 </div>
             </div>
         </div>  
-
+        <% }) %>
     </section>
 
     <section id="down1">
+        <% result.forEach((element) => { %>
         <div class="opt">
             <div class="block2-active" onclick="myFunction1()" id="c1">
                 <img src="../public/images/other/description.png" alt="" height="50px" width="50px" style="margin-right:2vh"> <strong
@@ -287,17 +301,15 @@
             </div>
         </div>
 
-
+        
         <div class="show" id="myDIV1">
             <h3
                 style="font-size: 24px; line-height: 31.2px; font-family: Poppins, sans-serif; font-weight: 550; color:white;">
                 Description</h3>
             <div id="boxe"
                 style="width:100vh; height:30vh; border:.6px solid #6d69f4; padding:3vh; color:white; font-size: 3vh; border-radius: 6px;">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim deserunt et libero iusto explicabo
-                inventore dolorum! Recusandae facilis ipsa ipsam esse ea, cupiditate earum tempore quam iure ex
-                blanditiis ad quis beatae aliquam laboriosam quia! Ut, debitis id magnam quia magni possimus officiis
-                impedit quae. </div>
+              <%=element.Description%> 
+             </div>
         </div>
 
         <div class="hide" id="myDIV2">
@@ -416,6 +428,7 @@
                     </div>
                   </div> </div>
         </div>
+        <% }) %>
     </section>
 
     <script>

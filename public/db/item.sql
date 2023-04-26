@@ -5,7 +5,7 @@ CREATE TABLE `item` (
   `Item_Name` varchar(50) NOT NULL unique,
   `Description` text NOT NULL,
   `Starting_Bid_Price` int(10) NOT NULL,
-  `Status` varchar(10) NOT NULL,
+  `Status` varchar(15) NOT NULL,
   `Curr_Bid_Price` int(10) NOT NULL,
   `Seller_Id` varchar(10) NOT NULL,
   `Auction_Start_Time` datetime NOT NULL,

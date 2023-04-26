@@ -27,3 +27,4 @@ ON watchlist.Item_Id = item.Item_Id where User_Id = 'sam@101';
 drop table watchlist;
 
 select * from watchlist;
+

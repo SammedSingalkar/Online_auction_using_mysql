@@ -8,13 +8,14 @@ const nodemailer = require("nodemailer");
 let alert = require("alert");
 const fs = require('fs');
 const fileUpload = require('express-fileupload');
+require('dotenv').config();
 
 var router = express.Router();
 
 var app = express();
 app.set("view engine", "ejs");
 app.use(express.static(__dirname));
-app.use(express.urlencoded());
+app.use(express.urlencoded({ extended: true }));
 // app.use(express.urlencoded({ extended: true }));
 
 // app.use('/api',router)
@@ -23,10 +24,10 @@ router.use(fileUpload());
 
 
 var con = mysql.createConnection({
-  host: "localhost",
-  user: "root",
-  password: "Iamsammed@12",
-  database: "online_auction",
+  host: process.env.HOST,
+  user: process.env.USER,
+  password: process.env.PASSWORD,
+  database: process.env.DB,
 });
 
 con.connect(function (err) {
@@ -243,6 +244,8 @@ router.route("/wishlist/:id").post((req, res) => {
   );
 });
 
+// router.route("/addwishlist/:id")
+
 router.route("/bid").get((req, res) => {
   if (!req.session.isLoggedIn) {
     res.redirect("/signin");
@@ -404,8 +407,36 @@ router.route("/purchases").get((req, res) => {
 });
 
 router.route("/product_detail/:id").get((req, res) => {
-  res.render("product_detail");
-});
+  if (!req.session.isLoggedIn) {
+    res.redirect("/signin");
+  } else {
+    const id = req.params.id;
+    con.query("SELECT * FROM item where Item_Id = ?",[id], (err, result) => {
+      if (err) throw err;
+    res.render("product_detail",{result:result});
+    })
+  }
+})
+.post((req,res)=>{
+  if (!req.session.isLoggedIn) {
+    res.redirect("/signin");
+  } else {
+    var item_id = req.params.id;
+    var user_id = req.session.user.User_Id;
+    const sql = `INSERT INTO watchlist (WatchList_Id, Item_Id, User_Id) 
+             VALUES (?, ?, ?)`;
+
+      const values = [
+        null,
+        item_id,
+        user_id,
+      ];
+      con.query(sql, values, (err, result) => {
+        if (err) throw err;
+        alert("Data inserted successfully");
+      });
+  }
+})
 
 router.route("/logout").get((req, res) => {
   req.session.destroy((err) => {

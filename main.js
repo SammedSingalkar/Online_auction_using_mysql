@@ -169,6 +169,11 @@ router.route("/all/categories").get((req, res) => {
   );
 });
 
+router.route("/category_prodcuts")
+.get((req,res)=>{
+  res.render('category_detail')
+})
+
 router
   .route("/profile")
   .get((req, res) => {

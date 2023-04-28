@@ -6,9 +6,11 @@ var mysql = require("mysql");
 const session = require("express-session");
 const nodemailer = require("nodemailer");
 let alert = require("alert");
-const fs = require('fs');
-const fileUpload = require('express-fileupload');
-require('dotenv').config();
+const fs = require("fs");
+const fileUpload = require("express-fileupload");
+require("dotenv").config();
+const util = require("util");
+// const query = util.promisify(con.query).bind(con);
 
 var router = express.Router();
 
@@ -19,9 +21,9 @@ app.use(express.urlencoded({ extended: true }));
 // app.use(express.urlencoded({ extended: true }));
 
 // app.use('/api',router)
+
 app.use("/", router);
 router.use(fileUpload());
-
 
 var con = mysql.createConnection({
   host: process.env.HOST,
@@ -169,10 +171,9 @@ router.route("/all/categories").get((req, res) => {
   );
 });
 
-router.route("/category_prodcuts")
-.get((req,res)=>{
-  res.render('category_detail')
-})
+router.route("/category_prodcuts").get((req, res) => {
+  res.render("category_detail");
+});
 
 router
   .route("/profile")
@@ -344,11 +345,18 @@ router
       const auction_end = `${year1}-${month1}-${day1} ${hours1}:${minutes1}:${seconds1}`;
       const category = req.body.category;
 
-      const img1 = req.files.product_image1 ? req.files.product_image1.data : null;
-      const img2 = req.files.product_image2 ? req.files.product_image2.data : null;
-      const img3 = req.files.product_image3 ? req.files.product_image3.data : null;
-      const img4 = req.files.product_image4 ? req.files.product_image4.data : null;
-
+      const img1 = req.files.product_image1
+        ? req.files.product_image1.data
+        : null;
+      const img2 = req.files.product_image2
+        ? req.files.product_image2.data
+        : null;
+      const img3 = req.files.product_image3
+        ? req.files.product_image3.data
+        : null;
+      const img4 = req.files.product_image4
+        ? req.files.product_image4.data
+        : null;
 
       const sql = `INSERT INTO item (Item_Id, Item_Name, Description, Starting_Bid_Price, Status, Curr_Bid_Price, Seller_Id, Auction_Start_Time, Auction_End_Time, Category) 
              VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`;
@@ -366,21 +374,18 @@ router
         category,
       ];
       // Create a folder with the product name
-const folderPath = `public/images/product_images/${product_name}`;
-fs.mkdirSync(folderPath, { recursive: true });
+      const folderPath = `public/images/product_images/${product_name}`;
+      fs.mkdirSync(folderPath, { recursive: true });
 
+      const buffer1 = Buffer.from(img1, "base64");
+      const buffer2 = Buffer.from(img2, "base64");
+      const buffer3 = Buffer.from(img3, "base64");
+      const buffer4 = Buffer.from(img4, "base64");
 
-const buffer1 = Buffer.from(img1, 'base64');
-const buffer2 = Buffer.from(img2, 'base64');
-const buffer3 = Buffer.from(img3, 'base64');
-const buffer4 = Buffer.from(img4, 'base64');
-
-fs.writeFileSync(`${folderPath}/1.jpg`, buffer1);
-fs.writeFileSync(`${folderPath}/2.jpg`, buffer2);
-fs.writeFileSync(`${folderPath}/3.jpg`, buffer3);
-fs.writeFileSync(`${folderPath}/4.jpg`, buffer4);
-
-
+      fs.writeFileSync(`${folderPath}/1.jpg`, buffer1);
+      fs.writeFileSync(`${folderPath}/2.jpg`, buffer2);
+      fs.writeFileSync(`${folderPath}/3.jpg`, buffer3);
+      fs.writeFileSync(`${folderPath}/4.jpg`, buffer4);
 
       con.query(sql, values, (err, result) => {
         if (err) throw err;
@@ -411,18 +416,98 @@ router.route("/purchases").get((req, res) => {
   res.render("user_content/purchases");
 });
 
-router.route("/product_detail/:id").get((req, res) => {
-  if (!req.session.isLoggedIn) {
-    res.redirect("/signin");
-  } else {
-    const id = req.params.id;
-    con.query("SELECT * FROM item where Item_Id = ?",[id], (err, result) => {
-      if (err) throw err;
-    res.render("product_detail",{result:result});
-    })
-  }
-})
-.post((req,res)=>{
+
+
+
+router
+  .route("/product_detail/:id")
+  .get((req, res) => {
+    if (!req.session.isLoggedIn) {
+      res.redirect("/signin");
+    } else {
+      const id = req.params.id;
+      con.query("SELECT * FROM item where Item_Id = ?", [id], (err, result) => {
+        if (err) throw err;
+        res.render("product_detail", { result: result });
+      });
+    }
+  })
+  .post((req, res) => {
+    if (!req.session.isLoggedIn) {
+      res.redirect("/signin");
+    } else {
+      var id = req.params.id;
+      var amount = req.body.amount;
+      var user_id = req.session.user.User_Id;
+    
+      con.query(
+        "SELECT Curr_Bid_Price, Seller_Id, Status, Auction_End_Time FROM item where Item_Id = ?",
+        [id],
+        (err, result) => {
+          if (err) throw err;
+          var end_time = result[0].Auction_End_Time;
+          // if (end_time > current _time)
+          const now = new Date();
+          if (end_time > now){
+          var current_price = result[0].Curr_Bid_Price;
+          var status = result[0].Status;
+          var seller_id = result[0].Seller_Id;
+          if (status == "active") {
+            if (amount > current_price) {
+              con.query(
+                "UPDATE item SET Curr_Bid_Price = ? WHERE Item_Id  = ?",
+                [amount, id],
+                (error, results, fields) => {
+                  if (error) {
+                    console.error(error);
+                  } else {
+                    alert("Bid is placed successfully");
+                    con.query(
+                      "SELECT bid_ID FROM bid ORDER BY bid_ID DESC LIMIT 1;",
+                      (err, result) => {
+                        if (err) throw err;
+                       let last_Id = result[0].bid_ID;
+                       let next_Id = last_Id + 1;
+                        const sql = `INSERT INTO Bid (bid_ID, buyer_ID, seller_ID, item_Id, Bid_Amount, Product_Status, Date_Time) 
+                        VALUES (?, ?, ?, ?, ?, ?, ?)`;
+                        const now = new Date();
+                        const year = now.getFullYear();
+                        const month = String(now.getMonth() + 1).padStart(2, '0');
+                        const day = String(now.getDate()).padStart(2, '0');
+                        const hour = String(now.getHours()).padStart(2, '0');
+                        const minute = String(now.getMinutes()).padStart(2, '0');
+                        const second = String(now.getSeconds()).padStart(2, '0');
+                        const dateTimeString = `${year}-${month}-${day} ${hour}:${minute}:${second}`;
+               const values = [next_Id, user_id, seller_id, id, amount, status,dateTimeString];
+               con.query(sql, values, (err, result) => {
+                 if (err) throw err;
+                 alert("Data inserted successfully");
+                 res.redirect("/product_detail/" + id);
+           });
+                      });
+                    // res.redirect("/product_detail/" + id);
+                  }
+                }
+              );
+            } else {
+              alert("Enter bigger amount than current amount");
+            }
+          } else if (!status == "active") {
+            const a = `Bidding is ${status}`;
+            alert(a);
+            // res.render('/product_detial')
+          }
+        }
+        else{
+          alert("bidding is expired")
+          res.redirect("/product_detail/" + id);
+        }
+      }
+      );
+    }
+  });
+
+router.route("/addwishlist/:id").post((req, res) => {
   if (!req.session.isLoggedIn) {
     res.redirect("/signin");
   } else {
@@ -431,17 +516,14 @@ router.route("/product_detail/:id").get((req, res) => {
     const sql = `INSERT INTO watchlist (WatchList_Id, Item_Id, User_Id) 
              VALUES (?, ?, ?)`;
 
-      const values = [
-        null,
-        item_id,
-        user_id,
-      ];
-      con.query(sql, values, (err, result) => {
-        if (err) throw err;
-        alert("Data inserted successfully");
-      });
+    const values = [null, item_id, user_id];
+    con.query(sql, values, (err, result) => {
+      if (err) throw err;
+      alert("Data inserted successfully");
+      res.redirect("/product_detail/" + item_id);
+    });
   }
-})
+});
 
 router.route("/logout").get((req, res) => {
   req.session.destroy((err) => {

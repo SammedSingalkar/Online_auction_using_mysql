@@ -919,13 +919,17 @@
         }
     </style>
 
-    <% result.forEach((element)=> { %> 
+    <!-- <% result.forEach((element)=> { %> 
     <script>
         // Set the auction end time
     const now = new Date();
     const auctionEndTime = new Date("<%=element.Auction_End_Time%>");
+    const auctionstartTime = new Date("<%=element.Auction_Start_Time%>");
     if (now>auctionEndTime){
         document.getElementById('timer').textContent = "Expired";
+    }
+    else if (auctionstartTime>now){
+        document.getElementById('timer').textContent = "Not Started";
     }
     else{
                
@@ -952,7 +956,46 @@
     }, 1000);
 }
     </script>
-    <% }) %>
+    <% }) %> -->
+
+    <% result.forEach((element)=> { %>
+        <script>
+          // Set the auction end time
+          const now = new Date();
+          const auctionEndTime = new Date("<%=element.Auction_End_Time%>");
+          const auctionstartTime = new Date("<%=element.Auction_Start_Time%>");
+          const timerElement = document.getElementById('timer<%=element.id%>');
+      
+          function updateTimer() {
+            // Get the current time
+            const now = new Date();
+          
+            // Calculate the remaining time in seconds
+            const remainingTimeInSeconds = Math.floor((auctionEndTime - now) / 1000);
+          
+            if (now > auctionEndTime) {
+              // Auction has ended
+              timerElement.textContent = "Expired";
+              clearInterval(intervalId);
+            } else if (auctionstartTime > now) {
+              // Auction has not started yet
+              timerElement.textContent = "Not Started";
+            } else {
+              // Auction is ongoing, update the countdown timer
+              const hours = Math.floor(remainingTimeInSeconds / 3600);
+              const minutes = Math.floor((remainingTimeInSeconds % 3600) / 60);
+              const seconds = Math.floor(remainingTimeInSeconds % 60);
+              const formattedTime = `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+              timerElement.textContent = hours + "  :  " + minutes + "  :  " + seconds;
+            }
+          }
+      
+          // Update the timer every second
+          const intervalId = setInterval(updateTimer, 1000);
+          updateTimer(); // Call once immediately to avoid initial delay
+        </script>
+      <% }) %>
+      
 </body>
 
 </html>

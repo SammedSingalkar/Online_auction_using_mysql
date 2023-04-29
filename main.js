@@ -256,9 +256,18 @@ router.route("/bid").get((req, res) => {
   if (!req.session.isLoggedIn) {
     res.redirect("/signin");
   } else {
-    res.render("user_content/bid");
+    user_id = req.session.user.User_Id;
+    con.query(
+      "SELECT * FROM bid JOIN item on bid.item_Id = item.Item_Id where buyer_ID = ?",
+      [user_id],
+      (err, result) => {
+        if (err) throw err;
+        res.render("user_content/bid",{result:result});
+      }
+    );
   }
 });
+
 
 router.route("/notifications").get((req, res) => {
   if (!req.session.isLoggedIn) {
@@ -402,8 +411,8 @@ router.route("/selling_history").get((req, res) => {
   } else {
     user_id = req.session.user.User_Id;
     con.query(
-      "SELECT * FROM sell_history JOIN item ON sell_history.Item_Id = item.Item_Id and sell_history.Seller_Id = item.Seller_Id where sell_history.Seller_Id = ?",
-      [user_id],
+      "SELECT * FROM sell_history JOIN item ON sell_history.Item_Id = item.Item_Id AND sell_history.Seller_Id = item.Seller_Id WHERE sell_history.Seller_Id = ? AND item.Status LIKE 'sold' or item.Status LIKE 'expired' ",
+        [user_id],
       (err, result) => {
         if (err) throw err;
         res.render("user_content/selling_history", { result: result });
@@ -419,16 +428,135 @@ router.route("/purchases").get((req, res) => {
 
 
 
+// router
+//   .route("/product_detail/:id")
+//   .get((req, res) => {
+//     if (!req.session.isLoggedIn) {
+//       res.redirect("/signin");
+//     } else {
+//       var id = req.params.id;
+//       con.query("SELECT * FROM item where Item_Id = ?", [id], (err, result) => {
+//         if (err) throw err;
+//         var now = new Date()
+//         var Auction_end_time = result[0].Auction_End_Time;
+//         con.query("SELECT * FROM bid where item_Id = ?", [id], (err, result1) => {
+//           if (err) throw err;          
+//           // console.log(result.length)
+//           if (now>Auction_end_time){
+//                 if (result1.length > 0){
+//                   var status = "Sold"
+//                   con.query(
+//                     "UPDATE item SET Status = ? WHERE Item_Id  = ?",
+//                     [status, id],
+//                     (error, results, fields) => {
+//                       if (error) 
+//                         console.error(error);
+//                         res.redirect("/product_detail/" + id);
+//                     })    
+//                 }
+//                 else if (result.length==0){
+//                   var status = "Expired"
+//                   con.query(
+//                     "UPDATE item SET Status = ? WHERE Item_Id  = ?",
+//                     [status, id],
+//                     (error, results, fields) => {
+//                       if (error) 
+//                         console.error(error);
+//                         res.redirect("/product_detail/" + id);
+//                     }) 
+//                 }
+//           }
+
+//           else if (now <= Auction_end_time){
+//             var status = "Active"
+//             con.query(
+//               "UPDATE item SET Status = ? WHERE Item_Id  = ?",
+//               [status, id],
+//               (error, results, fields) => {
+//                 if (error) 
+//                   console.error(error);
+//                   res.redirect("/product_detail/" + id);
+//               })  
+//           }
+//           res.redirect("/product_detail/" + id);
+//           // res.render("product_detail", { result: result });
+//         });
+        
+//         res.render("product_detail", { result: result });
+//       });
+//     }
+//   })
+
+
 router
   .route("/product_detail/:id")
   .get((req, res) => {
     if (!req.session.isLoggedIn) {
       res.redirect("/signin");
     } else {
-      const id = req.params.id;
+      var id = req.params.id;
+      var user_id = req.session.user.User_Id;
       con.query("SELECT * FROM item where Item_Id = ?", [id], (err, result) => {
         if (err) throw err;
-        res.render("product_detail", { result: result });
+        var product_name = result[0].Item_Name
+        var stat = result[0].Status;
+        if (result.length > 0) {
+          var now = new Date();
+          var Auction_end_time = result[0].Auction_End_Time;
+          con.query("SELECT * FROM bid where item_Id = ?", [id], (err, result1) => {
+            if (err) throw err;
+
+            if (now > Auction_end_time ) {
+              if (result1.length > 0) {
+                var status = "Sold";
+                con.query(
+                  "UPDATE item SET Status = ? WHERE Item_Id  = ?",
+                  [status, id],
+                  (error, results, fields) => {
+                    if (error) 
+                      console.error(error);
+                  }
+                );
+              } else {
+                var status = "Expired";
+                con.query(
+                  "UPDATE item SET Status = ? WHERE Item_Id  = ?",
+                  [status, id],
+                  (error, results, fields) => {
+                    if (error) 
+                      console.error(error);
+                  }
+                );
+      //           const sql = `INSERT INTO sell_history (Item_Id, Item_Name, Seller_Id) 
+      //           VALUES (?, ?, ?)`;
+   
+      //  const values = [id, product_name, user_id];
+      //  con.query(sql, values, (err, result) => {
+      //    if (err) throw err;
+      //   //  alert("Data inserted successfully");
+      //    res.redirect("/product_detail/" + id);
+      //  });
+              }
+            } else if (now <= Auction_end_time) {
+              var status = "Active";
+              con.query(
+                "UPDATE item SET Status = ? WHERE Item_Id  = ?",
+                [status, id],
+                (error, results, fields) => {
+                  if (error) 
+                    console.error(error);
+                }
+              );
+       
+            }
+
+            // Render the product detail page after updating the status
+            res.render("product_detail", { result: result });
+          });
+        } else {
+          // Handle the case where result is empty
+          res.render("product_detail", { result: [] });
+        }
       });
     }
   })
@@ -452,7 +580,7 @@ router
           var current_price = result[0].Curr_Bid_Price;
           var status = result[0].Status;
           var seller_id = result[0].Seller_Id;
-          if (status == "active") {
+          if (status == "Active" || "active") {
             if (amount > current_price) {
               con.query(
                 "UPDATE item SET Curr_Bid_Price = ? WHERE Item_Id  = ?",

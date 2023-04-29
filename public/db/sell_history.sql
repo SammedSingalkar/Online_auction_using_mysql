@@ -1,7 +1,7 @@
 use online_auction;
 
 CREATE TABLE `sell_history` (
-  `Item_Id` int(10) NOT NULL,
+  `Item_Id` int(10) NOT NULL primary key,
   `Item_Name` varchar(50) NOT NULL,
   `Seller_Id` varchar(10) NOT NULL,
   FOREIGN KEY (`Item_Name`) REFERENCES `item` (`Item_Name`),

@@ -428,66 +428,6 @@ router.route("/purchases").get((req, res) => {
 
 
 
-// router
-//   .route("/product_detail/:id")
-//   .get((req, res) => {
-//     if (!req.session.isLoggedIn) {
-//       res.redirect("/signin");
-//     } else {
-//       var id = req.params.id;
-//       con.query("SELECT * FROM item where Item_Id = ?", [id], (err, result) => {
-//         if (err) throw err;
-//         var now = new Date()
-//         var Auction_end_time = result[0].Auction_End_Time;
-//         con.query("SELECT * FROM bid where item_Id = ?", [id], (err, result1) => {
-//           if (err) throw err;          
-//           // console.log(result.length)
-//           if (now>Auction_end_time){
-//                 if (result1.length > 0){
-//                   var status = "Sold"
-//                   con.query(
-//                     "UPDATE item SET Status = ? WHERE Item_Id  = ?",
-//                     [status, id],
-//                     (error, results, fields) => {
-//                       if (error) 
-//                         console.error(error);
-//                         res.redirect("/product_detail/" + id);
-//                     })    
-//                 }
-//                 else if (result.length==0){
-//                   var status = "Expired"
-//                   con.query(
-//                     "UPDATE item SET Status = ? WHERE Item_Id  = ?",
-//                     [status, id],
-//                     (error, results, fields) => {
-//                       if (error) 
-//                         console.error(error);
-//                         res.redirect("/product_detail/" + id);
-//                     }) 
-//                 }
-//           }
-
-//           else if (now <= Auction_end_time){
-//             var status = "Active"
-//             con.query(
-//               "UPDATE item SET Status = ? WHERE Item_Id  = ?",
-//               [status, id],
-//               (error, results, fields) => {
-//                 if (error) 
-//                   console.error(error);
-//                   res.redirect("/product_detail/" + id);
-//               })  
-//           }
-//           res.redirect("/product_detail/" + id);
-//           // res.render("product_detail", { result: result });
-//         });
-        
-//         res.render("product_detail", { result: result });
-//       });
-//     }
-//   })
-
-
 router
   .route("/product_detail/:id")
   .get((req, res) => {
@@ -527,15 +467,6 @@ router
                       console.error(error);
                   }
                 );
-      //           const sql = `INSERT INTO sell_history (Item_Id, Item_Name, Seller_Id) 
-      //           VALUES (?, ?, ?)`;
-   
-      //  const values = [id, product_name, user_id];
-      //  con.query(sql, values, (err, result) => {
-      //    if (err) throw err;
-      //   //  alert("Data inserted successfully");
-      //    res.redirect("/product_detail/" + id);
-      //  });
               }
             } else if (now <= Auction_end_time) {
               var status = "Active";

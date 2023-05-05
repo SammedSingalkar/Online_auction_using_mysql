@@ -25,33 +25,8 @@
     <link rel="stylesheet" href="css/swiper-bundle.min.css">
     <link rel="stylesheet" type="text/css" href="../public/css/font-awesome.css">
     <link rel="stylesheet" type="text/css" href="../public/css/menu.css">
+    <link rel="stylesheet" type="text/css" href="../public/css/product_detail.css">
 
-    <style>
-        figure {
-            width: 100vh;
-            height: 70vh;
-            overflow: hidden;
-            border: 1px solid #fff;
-            position: relative;
-            border: .6px solid #6d69f4;
-            border-radius: 5px;
-        }
-
-        figure img {
-            max-width: 100%;
-            min-width: 100%;
-            position: absolute;
-            left: 50%;
-            top: 50%;
-            transform: translate(-50%, -50%);
-            z-index: 10;
-            pointer-events: none;
-        }
-
-        .buyandwish {
-            display: inline-flex;
-        }
-    </style>
 </head>
 
 <body>
@@ -616,386 +591,44 @@
 
     </script>
 
-
-
-    <style>
-        /* button.bbtn:active, 
- button.bbtn:focus{
-    color:white; 
-            border:2px solid #6d69f4; 
-            background-color:#101046; 
-            width:90vh; 
-            height:8vh; 
-            text-align: left; 
-            font-size:20px; 
-            border-radius:5px; 
-            text-align:none;
- } */
-
-        .bbtn {
-            color: white;
-            border: 2px solid #6d69f4;
-            background-color: #101046;
-            width: 140vh;
-            height: 7vh;
-            text-align: left;
-            font-size: 18px;
-            border-radius: 5px;
-            text-align: none;
-        }
-
-        .bbtn:hover {
-            color: white;
-            border: 2px solid #6d69f4;
-            background-color: #101046;
-            width: 140vh;
-            height: 7vh;
-            text-align: left;
-            font-size: 18px;
-            border-radius: 5px;
-            text-align: none;
-        }
-
-        td,
-        th {
-            /* border: .6px solid #6d69f4; */
-            text-align: left;
-            padding: 8px;
-            height: 8vh;
-            font-size: 2.5vh;
-            /* border-radius: 10px; */
-        }
-
-        table {
-            /* border-collapse: collapse; */
-            width: 120vh;
-            border-radius: 10px;
-            border-collapse: separate;
-            border-spacing: 0;
-            border-radius: 10px;
-            border: .6px solid #6d69f4;
-        }
-
-        tr:nth-child(odd) {
-            background-color: #0f0f4f;
-        }
-
-        tr:nth-child(even) {
-            background-color: #242471;
-        }
-
-
-        .block2-active {
-            position: relative;
-            display: inline-block;
-            margin-top: 4vh;
-            margin-right: 1vh;
-            width: 39.1vh;
-            height: 12vh;
-            border: .6px solid #6d69f4;
-            border-radius: 6px;
-            padding-top: 2vh;
-            padding-bottom: 2vh;
-            padding-left: 8vh;
-            padding-right: 6vh;
-            cursor: pointer;
-            background-color: #4934d3;
-        }
-
-        .hide {
-            visibility: hidden;
-        }
-
-        .container {
-            height: 60vh;
-            width: 100%;
-            background-color: #101046;
-        }
-
-        .cont {
-            display: inline-block;
-            /* display: grid;
-        grid-template-columns: 800px 1fr; */
-
-        }
-
-        .container h3 {
-            /* padding: 20vh; */
-            padding-left: 20vh;
-            padding-top: 20vh;
-            font-size: 9vh;
-            color: white;
-            font-weight: 900;
-        }
-
-        .container h4 {
-            color: white;
-            font-size: x-large;
-            margin-left: 20vh;
-            margin-top: 4vh;
-        }
-
-        .middle {
-            height: 120vh;
-            background-color: #000036;
-            padding-left: 12vh;
-            padding-top: 15vh;
-        }
-
-        .box2 {
-            margin-top: 2vh;
-            width: 100vh;
-            height: 90vh;
-            /* border: 2px solid white; */
-            display: inline-block;
-            margin-right: 3vh;
-        }
-
-        .box2 h3 strong {
-            color: #03d6f9;
-            font-weight: 300;
-            font-size: 4vh;
-        }
-
-        .sec2 {
-            width: 15vh;
-            height: 10vh;
-            border: .6px solid #6d69f4;
-            border-radius: 5px;
-            background-color: #242471;
-            margin-top: 3vh;
-            margin-left: 2vh;
-            display: inline-block;
-            cursor: pointer;
-        }
-
-        .downside {
-            height: 60vh;
-            padding-top: 2vh;
-            width: 100vh;
-            margin-top: 2vh;
-            /* border: 2px solid white; */
-            display: inline-block;
-            margin-right: 3vh;
-        }
-
-        #block {
-            width: 100%;
-            border-radius: 6px;
-            border: .6px solid #6d69f4;
-            height: 22vh;
-            margin-bottom: 4vh;
-            padding: 2vh;
-            /* border-bottom: .6px solid grey; */
-        }
-
-        #block h3 {
-            font-size: x-large;
-            font-weight: 600;
-            color: white;
-            margin-bottom: 4vh;
-        }
-
-        #block h3 strong {
-            font-size: 4.5vh;
-            float: right;
-            color: #03d6f9;
-            font-weight: 500;
-        }
-
-        #block h4 {
-            color: white;
-            margin-bottom: 2vh;
-        }
-
-        #block h4 strong {
-            color: white;
-            float: right;
-            font-size: 3vh;
-
-        }
-
-        #down {
-            background-color: #000036;
-            height: 90vh;
-            padding-left: 12vh;
-            padding-top: 2vh;
-        }
-
-        #input_block1 {
-            border-radius: 6px;
-            border: .6px solid #6d69f4;
-            padding: 1vh;
-            width: 70vh;
-            background-color: inherit;
-            height: 7vh;
-            color: white;
-            font-size: larger;
-        }
-
-        .block1 {
-            display: inline-block;
-        }
-
-        #block1_button {
-            width: 25vh;
-            height: 7vh;
-            border-radius: 6px;
-            background-color: #4934d3;
-            padding: 2vh;
-            color: white;
-            font-size: larger;
-            font-weight: 700;
-            margin-left: 2vh;
-            border: .6px solid #6d69f4;
-        }
-
-        #block1_button:hover {
-            background-color: #101046;
-            transition: background-color .6s;
-        }
-
-        #bide_button {
-            margin-top: 4vh;
-            width: 25vh;
-            height: 7vh;
-            border-radius: 6px;
-            /* background-color: #4934d3; */
-            background-color: inherit;
-            padding: 2vh;
-            color: white;
-            font-size: larger;
-            font-weight: 700;
-            margin-left: 2vh;
-            border: .6px solid #6d69f4;
-        }
-
-        #bide_button:hover {
-            background-color: #4934d3;
-            transition: background-color .6s;
-        }
-
-        #down1 {
-            background-color: #000036;
-            height: 105vh;
-            padding-left: 12vh;
-            padding-right: 14vh;
-            padding-top: 2vh;
-        }
-
-        .opt {
-            /* margin-left: 10vh;
-            margin-right: 10vh; */
-            background-color: #242471;
-            height: 20vh;
-            border-radius: 10px;
-            padding-left: 8vh;
-            padding-right: 8vh;
-        }
-
-        .block2 {
-            /* position:absolute; */
-            position: relative;
-            display: inline-block;
-            margin-top: 4vh;
-            margin-right: 1vh;
-            width: 39.1vh;
-            height: 12vh;
-            border: .6px solid #6d69f4;
-            border-radius: 6px;
-            padding-top: 2vh;
-            padding-bottom: 2vh;
-            padding-left: 8vh;
-            padding-right: 6vh;
-            cursor: pointer;
-        }
-
-        .block2:hover {
-            background-color: #4934d3;
-            border: none;
-            /* transition: background-color .6s;
-            transition: border .6s; */
-            transition: all .6s;
-        }
-    </style>
-
-    <!-- <% result.forEach((element)=> { %> 
-    <script>
-        // Set the auction end time
-    const now = new Date();
-    const auctionEndTime = new Date("<%=element.Auction_End_Time%>");
-    const auctionstartTime = new Date("<%=element.Auction_Start_Time%>");
-    if (now>auctionEndTime){
-        document.getElementById('timer').textContent = "Expired";
-    }
-    else if (auctionstartTime>now){
-        document.getElementById('timer').textContent = "Not Started";
-    }
-    else{
-               
-    
-    // Update the countdown timer every second
-    setInterval(() => {
-      // Get the current time
-      const now = new Date();
-    
-      // Calculate the remaining time in seconds
-      const remainingTimeInSeconds = Math.floor((auctionEndTime - now) / 1000);
-    
-      // Convert the remaining time to hours, minutes, and seconds
-      const hours = Math.floor(remainingTimeInSeconds / 3600);
-      const minutes = Math.floor((remainingTimeInSeconds % 3600) / 60);
-      const seconds = Math.floor(remainingTimeInSeconds % 60);
-    
-      // Format the remaining time as "hh:mm:ss"
-      const formattedTime = `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
-    
-      // Update the countdown timer on the page
-    //   document.getElementById('timer').textContent = formattedTime;
-      document.getElementById('timer').textContent = hours + "  :  " + minutes + "  :  " + seconds;
-    }, 1000);
-}
-    </script>
-    <% }) %> -->
-
     <% result.forEach((element)=> { %>
         <script>
-          // Set the auction end time
-          const now = new Date();
-          const auctionEndTime = new Date("<%=element.Auction_End_Time%>");
-          const auctionstartTime = new Date("<%=element.Auction_Start_Time%>");
-          const timerElement = document.getElementById('timer<%=element.id%>');
-      
-          function updateTimer() {
-            // Get the current time
+            // Set the auction end time
             const now = new Date();
-          
-            // Calculate the remaining time in seconds
-            const remainingTimeInSeconds = Math.floor((auctionEndTime - now) / 1000);
-          
-            if (now > auctionEndTime) {
-              // Auction has ended
-              timerElement.textContent = "Expired";
-              clearInterval(intervalId);
-            } else if (auctionstartTime > now) {
-              // Auction has not started yet
-              timerElement.textContent = "Not Started";
-            } else {
-              // Auction is ongoing, update the countdown timer
-              const hours = Math.floor(remainingTimeInSeconds / 3600);
-              const minutes = Math.floor((remainingTimeInSeconds % 3600) / 60);
-              const seconds = Math.floor(remainingTimeInSeconds % 60);
-              const formattedTime = `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
-              timerElement.textContent = hours + "  :  " + minutes + "  :  " + seconds;
+            const auctionEndTime = new Date("<%=element.Auction_End_Time%>");
+            const auctionstartTime = new Date("<%=element.Auction_Start_Time%>");
+            const timerElement = document.getElementById('timer<%=element.id%>');
+
+            function updateTimer() {
+                // Get the current time
+                const now = new Date();
+
+                // Calculate the remaining time in seconds
+                const remainingTimeInSeconds = Math.floor((auctionEndTime - now) / 1000);
+
+                if (now > auctionEndTime) {
+                    // Auction has ended
+                    timerElement.textContent = "Expired";
+                    clearInterval(intervalId);
+                } else if (auctionstartTime > now) {
+                    // Auction has not started yet
+                    timerElement.textContent = "Not Started";
+                } else {
+                    // Auction is ongoing, update the countdown timer
+                    const hours = Math.floor(remainingTimeInSeconds / 3600);
+                    const minutes = Math.floor((remainingTimeInSeconds % 3600) / 60);
+                    const seconds = Math.floor(remainingTimeInSeconds % 60);
+                    const formattedTime = `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+                    timerElement.textContent = hours + "  :  " + minutes + "  :  " + seconds;
+                }
             }
-          }
-      
-          // Update the timer every second
-          const intervalId = setInterval(updateTimer, 1000);
-          updateTimer(); // Call once immediately to avoid initial delay
+
+            // Update the timer every second
+            const intervalId = setInterval(updateTimer, 1000);
+            updateTimer(); // Call once immediately to avoid initial delay
         </script>
-      <% }) %>
-      
+        <% }) %>
+
 </body>
 
 </html>
